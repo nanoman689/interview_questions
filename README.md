@@ -219,7 +219,10 @@ Only Bourbon and Neat
 
 #### CSS Questions:
 
-* What is the difference between classes and ID's in CSS?
+#### What is the difference between classes and ID's in CSS?
+Classes are the general term while ID's are unique. You can use classes over and over, but you can only use ID's once. Best example would be to say that in a class room of students, the students would be the Class, while Joe Smith would be the ID of that student.
+
+
 * What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
 * Describe Floats and how they work.
 * Describe z-index and how stacking context is formed.
