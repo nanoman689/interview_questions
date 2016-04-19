@@ -147,10 +147,63 @@ The doctype declaration should be the very first thing in an HTML document, befo
 * What are `data-` attributes good for?
 ### The HTML5 data- attribute is a new addition that assigns custom data to an element. It was built to store sensitive or private data that is exclusive to a page or application, for which there are no other matching attributes or elements.
 
-* Consider HTML5 as an open web platform. What are the building blocks of HTML5?
-* Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
-* Describe the difference between `<script>`, `<script async>` and `<script defer>`.
-* Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+#### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+The main building blocks are centred on HTML 5, CSS3, Javascript and SVG. Where HTML is a language to define the mark-up of a document (titles, headers, body, footer, tables, input forms etc.), CSS is a language to define style (formatting, colours, shades and the like). Javascript is a programming/scripting language and SVG is a language for creating 2D scalable vector graphics and images.
+
+
+#### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
+They are all storage on the client side. cookies is small piece of key-value pair (A key-value pair is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. Key-value pairs are frequently used in lookup tables, hash tables and configuration files.) with a expire time. sessionStorage is on persistent and scope only to current windows. localStorage is persisitent and socop only to domain, by key-value pair or SQL database (Web SQL)
+
+#### Describe the difference between `<script>`, `<script async>` and `<script defer>`.
+*Normal execution <script>*
+This is the default behavior of the <script> element. Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.
+*Deferred execution <script defer>*
+Simply put: delaying script execution until the HTML parser has finished. A positive effect of this attribute is that the DOM will be available for your script. However, since not every browser supports defer yet, don’t rely on it!
+*Asynchronous execution <script async>*
+Don’t care when the script will be available? Asynchronous is the best of both worlds: HTML parsing may continue and the script will be executed as soon as it’s ready. I’d recommend this for scripts such as Google Analytics.
+To explain is a lot easier, defer is the equivalent of jQuery.ready() - it means your script is guaranteed that the DOM is ready and all HTML has been parsed. Async means the file can potential load before the DOM is even parsed, which means you more than likely will not have access to the DOM.
+
+#### Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+
+- Here is what happens when a browser loads a page
+- Fetch the HTML page (e.g. index.html)
+- Begin parsing the HTML
+- The parser encounters a <script> tag referencing an external script file.
+- The browser requests the script file. Meanwhile, the parser blocks and stops parsing the other HTML on your page.
+- After some time the script is downloaded and subsequently executed.
+- The parser continues parsing the rest of the HTML document.
+
+Any script can insert its own HTML via document.write() or other DOM manipulations. This implies that the parser has to wait until the script has been downloaded and executed before it can safely parse the rest of the document. After all, the script could have inserted its own HTML in the document.
+
+Because your browser does not know my-script.js isn't going to modify the document until it has been downloaded & executed, the parser stops parsing.
+
+*Antiquated recommendation*
+The old approach to solve this problem was to put <script> tags at the bottom of your <body>, because this ensures the parser isn't blocked until the very end.
+
+This approach has its own problem: the browser cannot start downloading the scripts until the entire document is parsed. For larger websites with large scripts and stylesheets, being able to download the script as soon as possible is very important for performance. If your website doesn't load within 2 seconds, people will go to another website.
+
+In an optimal solution, the browser would start downloading your scripts as soon as possible, while at the same time parsing the rest of your document.
+
+*The modern approach*
+Today, browsers support the async and defer attributes on scripts. These attributes tell the browser it's safe to continue parsing while the scripts are being downloaded.
+
+*async*
+
+<script type="text/javascript" src="path/to/script1.js" async></script>
+<script type="text/javascript" src="path/to/script2.js" async></script>
+
+Scripts with the async attribute are executed asynchronously. This means the script is executed as soon as it's downloaded, without blocking the browser in the meantime.
+
+This implies that it's possible script 2 is downloaded and executed before script 1.
+
+*defer*
+<script type="text/javascript" src="path/to/script1.js" defer></script>
+<script type="text/javascript" src="path/to/script2.js" defer></script>
+
+Scripts with the defer attribute are executed in order (i.e. first script 1, then script 2). This also does not block the browser.
+
+Unlike async scripts, defer scripts are only executed after the entire document has been loaded.
+
 * What is progressive rendering?
 * Have you used different HTML templating languages before?
 
