@@ -2,100 +2,100 @@
 
 * What did you learn yesterday/this week?
 
-## More about building single page applications with AngularJS
+### More about building single page applications with AngularJS
 
 * What excites or interests you about coding?
 
-## All the kinds of applications that you can build
+### All the kinds of applications that you can build
 
 * What is a recent technical challenge you experienced and how did you solve it?
 
-## Recently it's been about learning more about APIs and intergradting them into my applications. I solved it by calling console.log to see what the data I was getting back from the API call and then pulled out the data I needed from that JSON file.
+### Recently it's been about learning more about APIs and intergradting them into my applications. I solved it by calling console.log to see what the data I was getting back from the API call and then pulled out the data I needed from that JSON file.
 
 * What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
-## For the UI it depends on what the the application is for and what kind of users will be using this application. Is it for more general use, so does it need a more simple UI or is it for more techinical people that need more information then a UI.
-## Security, again, it depends on the situation. Generally, it's a good idea to have some kind of security with something that is pulling user data or sites that are going out to external sites for information.
-## Maintainability It's a good idea to document things, have good clean code that people can understand. Have some source control so you have a history of what changes where made and when.
-## Technology Use what works best for the situation at hand. Also make sure what you are using is going to be supported later one when you want to update things.
+### For the UI it depends on what the the application is for and what kind of users will be using this application. Is it for more general use, so does it need a more simple UI or is it for more techinical people that need more information then a UI.
+### Security, again, it depends on the situation. Generally, it's a good idea to have some kind of security with something that is pulling user data or sites that are going out to external sites for information.
+### Maintainability It's a good idea to document things, have good clean code that people can understand. Have some source control so you have a history of what changes where made and when.
+### Technology Use what works best for the situation at hand. Also make sure what you are using is going to be supported later one when you want to update things.
   
 * Talk about your preferred development environment.
-## MacOX
-## Brackets / Sublime
-## chrome / firefox
-## git
+### MacOX
+### Brackets / Sublime
+### chrome / firefox
+### git
 
 * Which version control systems are you familiar with?
-## git
+### git
 
 * Can you describe your workflow when you create a web page?
-## Create a prototype with just rough elements.
-## Set up a basic structure with just html and rough links
-## Break down the code into smaller bits and build up from there.
-## Add the interaction and User intergration
+### Create a prototype with just rough elements.
+### Set up a basic structure with just html and rough links
+### Break down the code into smaller bits and build up from there.
+### Add the interaction and User intergration
 
 * If you have 5 different stylesheets, how would you best integrate them into the site?
-## Try to combine them into one file if possible.
-## If it's using something like Bootstrap, try to create the new styles outside of Bootstraps
+### Try to combine them into one file if possible.
+### If it's using something like Bootstrap, try to create the new styles outside of Bootstraps
 
 * Can you describe the difference between progressive enhancement and graceful degradation?
 
-## So, graceful degradation is the practice of building your web functionality so that it provides a certain level of user experience in more modern browsers, but it will also degrade gracefully to a lower level of user in experience in older browsers. This lower level is not as nice to use for your site visitors, but it does still provide them with the basic functionality that they came to your site to use; things do not break for them.
+### So, graceful degradation is the practice of building your web functionality so that it provides a certain level of user experience in more modern browsers, but it will also degrade gracefully to a lower level of user in experience in older browsers. This lower level is not as nice to use for your site visitors, but it does still provide them with the basic functionality that they came to your site to use; things do not break for them.
 
-## Progressive enhancement is similar, but it does things the other way round. You start by establishing a basic level of user experience that all browsers will be able to provide when rendering your web site, but you also build in more advanced functionality that will automatically be available to browsers that can use it.
+### Progressive enhancement is similar, but it does things the other way round. You start by establishing a basic level of user experience that all browsers will be able to provide when rendering your web site, but you also build in more advanced functionality that will automatically be available to browsers that can use it.
 
-## In other words, graceful degradation starts from the status quo of complexity and tries to fix for the lesser experience whereas progressive enhancement starts from a very basic, working example and allows for constant extension for future environments. Degrading gracefully means looking back whereas enhancing progressively means looking forward whilst keeping your feet on firm ground.
+### In other words, graceful degradation starts from the status quo of complexity and tries to fix for the lesser experience whereas progressive enhancement starts from a very basic, working example and allows for constant extension for future environments. Degrading gracefully means looking back whereas enhancing progressively means looking forward whilst keeping your feet on firm ground.
 
 
 * How would you optimize a website's assets/resources?
-## File concatention and minification (using browserify for example)
-## Minification of images
-## Try to avoid too many calles to outside databases and queries.
+### File concatention and minification (using browserify for example)
+### Minification of images
+### Try to avoid too many calles to outside databases and queries.
 
 * How many resources will a browser download from a given domain at a time?
-## Chrome it is 6, Firefox 6, IE11 is 8
+### Chrome it is 6, Firefox 6, IE11 is 8
   * What are the exceptions?
-## The limits are per domain, so you could do a wildcard DNS.
+### The limits are per domain, so you could do a wildcard DNS.
 
 * Name 3 ways to decrease page load (perceived or actual load time).
-## Minimize images
-## Minimize and combine Javascript
-## Minimize CSS automatically or by removing unused styles.
+### Minimize images
+### Minimize and combine Javascript
+### Minimize CSS automatically or by removing unused styles.
 
 * If you jumped on a project and they used tabs and you used spaces, what would you do?
-## Suggest the project utilize something like EditorConfig
-## Keep with what they are doing and bring it up in a meeting later.
+### Suggest the project utilize something like EditorConfig
+### Keep with what they are doing and bring it up in a meeting later.
 
 * Describe how you would create a simple slideshow page.
-## Wrap up the images in a div tag
-## Use CSS to hide the images that do not need to be displayed.
-## Use Javascript to create a navigvation (using an array possibly)
+### Wrap up the images in a div tag
+### Use CSS to hide the images that do not need to be displayed.
+### Use Javascript to create a navigvation (using an array possibly)
 
 * If you could master one technology this year, what would it be?
-## Angular JS
+### Angular JS
 
 * Explain the importance of standards and standards bodies.
-## Standards describe how a thing does and should work. It is extremely important especially in software, because the thing can be used by many people for different perposes. For example, there are several engines for JavaScript including V8, JavaScriptCore, Rhino, etc, and if there is no standard for the language, developers and users cannot feel ensured when doing something with it.
+### Standards describe how a thing does and should work. It is extremely important especially in software, because the thing can be used by many people for different perposes. For example, there are several engines for JavaScript including V8, JavaScriptCore, Rhino, etc, and if there is no standard for the language, developers and users cannot feel ensured when doing something with it.
 
 * What is Flash of Unstyled Content? How do you avoid FOUC?
-## It is caused when content is loaded before styles are applied to the content. It happens when style tags are placed after other content, or applied asynchronously, for example, by scripts.
+### It is caused when content is loaded before styles are applied to the content. It happens when style tags are placed after other content, or applied asynchronously, for example, by scripts.
 
-## To avoid FOUC, the styles should be placed in order that they can be loaded and applied in the same rendering process as HTML elements do. The easiest way is to place them in the head, and avoid applying styles by scripts at the first load.
+### To avoid FOUC, the styles should be placed in order that they can be loaded and applied in the same rendering process as HTML elements do. The easiest way is to place them in the head, and avoid applying styles by scripts at the first load.
 
 * Explain what ARIA and screenreaders are, and how to make a website accessible.
-## They are for accessibility. To make a website accessible, we should try to follow the usage of HTML elements, for example, h1 for headers and section for sections. Also it's good to take care of using visual contents, such as not forgetting to add an alt attribute to img tags.
+### They are for accessibility. To make a website accessible, we should try to follow the usage of HTML elements, for example, h1 for headers and section for sections. Also it's good to take care of using visual contents, such as not forgetting to add an alt attribute to img tags.
 
 * Explain some of the pros and cons for CSS animations versus JavaScript animations.
-## CSS
+### CSS
 ### Pro Use GPU so less CPU effecient, they do not consume Javascript event loops
 ### Cons Hard to handle as the CSS doesn't contain logic and not supported in older browsers.
 
-## Javascript
+### Javascript
 ### Pro Easy to handle as they have logic
 ### Con Use CPU 
 
 * What does CORS stand for and what issue does it address?
 
-## CORS stands for cross-origin resource sharing. There could be situation where some resources should be allowed from sources having different origin. CORS is a standard to enable cross-site HTTP requests for:
+### CORS stands for cross-origin resource sharing. There could be situation where some resources should be allowed from sources having different origin. CORS is a standard to enable cross-site HTTP requests for:
 
 ### AJAX API call
 ### Web Fonts
@@ -107,42 +107,42 @@
 #### HTML Questions:
 
 * What does a `doctype` do?
-## The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration refers to a Document Type Definition
+### The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration refers to a Document Type Definition
 
-## HTML 5 <!DOCTYPE html>
-## XML 1.0 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+### HTML 5 <!DOCTYPE html>
+### XML 1.0 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 * What's the difference between standards mode and quirks mode?
-## There are now three modes used by the layout engines in web browsers: quirks mode, almost standards mode, and full standards mode. In quirks mode, layout emulates nonstandard behavior in Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards. In full standards mode, the behavior is (hopefully) the behavior described by the HTML and CSS specifications. In almost standards mode, there are only a very small number of quirks implemented.
+### There are now three modes used by the layout engines in web browsers: quirks mode, almost standards mode, and full standards mode. In quirks mode, layout emulates nonstandard behavior in Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards. In full standards mode, the behavior is (hopefully) the behavior described by the HTML and CSS specifications. In almost standards mode, there are only a very small number of quirks implemented.
 
-## Biggest one being the CSS box model.
+### Biggest one being the CSS box model.
 
 * What's the difference between HTML and XHTML?
-## Short answer: xHTML is XML, HTML is not.
-## xHTML is the XML version of HTML. 
-## To understand this answer you have to know what XML is : it's a markup language designed to format data in a way that's easy to understand for a human, and also easy to parse for a machine.
+### Short answer: xHTML is XML, HTML is not.
+### xHTML is the XML version of HTML. 
+### To understand this answer you have to know what XML is : it's a markup language designed to format data in a way that's easy to understand for a human, and also easy to parse for a machine.
 
-## XML is also a meta-language. This means that a lot of languages are based on XML, with rules and grammar defined to make a language with specific purpose from XML. Some well-known  examples are OpenMath, MML, XPath, XQuery, ...
+### XML is also a meta-language. This means that a lot of languages are based on XML, with rules and grammar defined to make a language with specific purpose from XML. Some well-known  examples are OpenMath, MML, XPath, XQuery, ...
 
-## Now at the beginning of the web, the markup language that was used for web pages was HTML. It looks a lot like XML but it's not an XML language because it does not respect the XML standard.
+### Now at the beginning of the web, the markup language that was used for web pages was HTML. It looks a lot like XML but it's not an XML language because it does not respect the XML standard.
 
-## Later, xHTML was invented with respect to the XML standard. It is more strict than html because you have to respect all the xml rules (Closing tag for each opening tag, attributes have to have a value etc.)
+### Later, xHTML was invented with respect to the XML standard. It is more strict than html because you have to respect all the xml rules (Closing tag for each opening tag, attributes have to have a value etc.)
 
 * Are there any problems with serving pages as `application/xhtml+xml`?
-## The XHTML page must be well formed.If you forgot to closed a element and the browser will not to closed it and cause error.
-## For "application/xhtml+xml", some old browsers no supports.
+### The XHTML page must be well formed.If you forgot to closed a element and the browser will not to closed it and cause error.
+### For "application/xhtml+xml", some old browsers no supports.
 
 * How do you serve a page with content in multiple languages?
-## You must have translated/localized pages on the server for each language you intend to support.
-## Your server must recognize the browser’s language request.
-## You must carefully name the files for the localized pages, so the server has a systematic way of locating them.
-## You need a method for serving a generic page when you don’t have the requested language.
+### You must have translated/localized pages on the server for each language you intend to support.
+### Your server must recognize the browser’s language request.
+### You must carefully name the files for the localized pages, so the server has a systematic way of locating them.
+### You need a method for serving a generic page when you don’t have the requested language.
 
 * What kind of things must you be wary of when design or developing for multilingual sites?
-## Another problem with many solutions: setting the default language, using Unicode encoding, using the ‘lang’ attribute, being aware of standard font sizes and text direction, and language word length (may affect layout).
+### Another problem with many solutions: setting the default language, using Unicode encoding, using the ‘lang’ attribute, being aware of standard font sizes and text direction, and language word length (may affect layout).
 
 * What are `data-` attributes good for?
-## The HTML5 data- attribute is a new addition that assigns custom data to an element. It was built to store sensitive or private data that is exclusive to a page or application, for which there are no other matching attributes or elements.
+### The HTML5 data- attribute is a new addition that assigns custom data to an element. It was built to store sensitive or private data that is exclusive to a page or application, for which there are no other matching attributes or elements.
 
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 * Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
