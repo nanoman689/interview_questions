@@ -112,44 +112,40 @@ CORS stands for cross-origin resource sharing. There could be situation where so
 #### What does a `doctype` do?
 The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration refers to a Document Type Definition
 
-### HTML 5 <!DOCTYPE html>
-### XML 1.0 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+HTML 5 <!DOCTYPE html>
+XML 1.0 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-* What's the difference between standards mode and quirks mode?
-### There are now three modes used by the layout engines in web browsers: quirks mode, almost standards mode, and full standards mode. In quirks mode, layout emulates nonstandard behavior in Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards. In full standards mode, the behavior is (hopefully) the behavior described by the HTML and CSS specifications. In almost standards mode, there are only a very small number of quirks implemented.
+#### What's the difference between standards mode and quirks mode?
+There are now three modes used by the layout engines in web browsers: quirks mode, almost standards mode, and full standards mode. In quirks mode, layout emulates nonstandard behavior in Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards. In full standards mode, the behavior is (hopefully) the behavior described by the HTML and CSS specifications. In almost standards mode, there are only a very small number of quirks implemented.
 
-### Biggest one being the CSS box model.
+Biggest one being the CSS box model.
 
-* What's the difference between HTML and XHTML?
-### Short answer: xHTML is XML, HTML is not.
-### xHTML is the XML version of HTML. 
-### To understand this answer you have to know what XML is : it's a markup language designed to format data in a way that's easy to understand for a human, and also easy to parse for a machine.
+#### What's the difference between HTML and XHTML?
+- Short answer: xHTML is XML, HTML is not.
+- xHTML is the XML version of HTML. 
+- To understand this answer you have to know what XML is : it's a markup language designed to format data in a way that's easy to understand for a human, and also easy to parse for a machine.
+- XML is also a meta-language. This means that a lot of languages are based on XML, with rules and grammar defined to make a language with specific purpose from XML. Some well-known  examples are OpenMath, MML, XPath, XQuery, ...
+- Now at the beginning of the web, the markup language that was used for web pages was HTML. It looks a lot like XML but it's not an XML language because it does not respect the XML standard.
+- Later, xHTML was invented with respect to the XML standard. It is more strict than html because you have to respect all the xml rules (Closing tag for each opening tag, attributes have to have a value etc.)
 
-### XML is also a meta-language. This means that a lot of languages are based on XML, with rules and grammar defined to make a language with specific purpose from XML. Some well-known  examples are OpenMath, MML, XPath, XQuery, ...
+#### Are there any problems with serving pages as `application/xhtml+xml`?
+- The XHTML page must be well formed.If you forgot to closed a element and the browser will not to closed it and cause error.
+- For "application/xhtml+xml", some old browsers no supports.
 
-### Now at the beginning of the web, the markup language that was used for web pages was HTML. It looks a lot like XML but it's not an XML language because it does not respect the XML standard.
+#### How do you serve a page with content in multiple languages?
+- You must have translated/localized pages on the server for each language you intend to support.
+- Your server must recognize the browser’s language request.
+- You must carefully name the files for the localized pages, so the server has a systematic way of locating them.
+- You need a method for serving a generic page when you don’t have the requested language.
 
-### Later, xHTML was invented with respect to the XML standard. It is more strict than html because you have to respect all the xml rules (Closing tag for each opening tag, attributes have to have a value etc.)
+#### What kind of things must you be wary of when design or developing for multilingual sites?
+Another problem with many solutions: setting the default language, using Unicode encoding, using the ‘lang’ attribute, being aware of standard font sizes and text direction, and language word length (may affect layout).
 
-* Are there any problems with serving pages as `application/xhtml+xml`?
-### The XHTML page must be well formed.If you forgot to closed a element and the browser will not to closed it and cause error.
-### For "application/xhtml+xml", some old browsers no supports.
-
-* How do you serve a page with content in multiple languages?
-### You must have translated/localized pages on the server for each language you intend to support.
-### Your server must recognize the browser’s language request.
-### You must carefully name the files for the localized pages, so the server has a systematic way of locating them.
-### You need a method for serving a generic page when you don’t have the requested language.
-
-* What kind of things must you be wary of when design or developing for multilingual sites?
-### Another problem with many solutions: setting the default language, using Unicode encoding, using the ‘lang’ attribute, being aware of standard font sizes and text direction, and language word length (may affect layout).
-
-* What are `data-` attributes good for?
-### The HTML5 data- attribute is a new addition that assigns custom data to an element. It was built to store sensitive or private data that is exclusive to a page or application, for which there are no other matching attributes or elements.
+#### What are `data-` attributes good for?
+The HTML5 data- attribute is a new addition that assigns custom data to an element. It was built to store sensitive or private data that is exclusive to a page or application, for which there are no other matching attributes or elements.
 
 #### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 The main building blocks are centred on HTML 5, CSS3, Javascript and SVG. Where HTML is a language to define the mark-up of a document (titles, headers, body, footer, tables, input forms etc.), CSS is a language to define style (formatting, colours, shades and the like). Javascript is a programming/scripting language and SVG is a language for creating 2D scalable vector graphics and images.
-
 
 #### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
 They are all storage on the client side. cookies is small piece of key-value pair (A key-value pair is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. Key-value pairs are frequently used in lookup tables, hash tables and configuration files.) with a expire time. sessionStorage is on persistent and scope only to current windows. localStorage is persisitent and socop only to domain, by key-value pair or SQL database (Web SQL)
