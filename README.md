@@ -152,7 +152,7 @@ They are all storage on the client side. cookies is small piece of key-value pai
 
 #### Describe the difference between `<script>`, `<script async>` and `<script defer>`
 *Normal execution (script)* 
-- This is the default behavior of the '<script>' element. Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.
+- This is the default behavior of the script element. Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.
 
 *Deferred execution (script async)*
 - Simply put: delaying script execution until the HTML parser has finished. A positive effect of this attribute is that the DOM will be available for your script. However, since not every browser supports defer yet, don’t rely on it!
