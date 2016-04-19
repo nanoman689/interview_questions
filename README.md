@@ -150,20 +150,20 @@ The main building blocks are centred on HTML 5, CSS3, Javascript and SVG. Where 
 #### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
 They are all storage on the client side. cookies is small piece of key-value pair (A key-value pair is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. Key-value pairs are frequently used in lookup tables, hash tables and configuration files.) with a expire time. sessionStorage is on persistent and scope only to current windows. localStorage is persisitent and socop only to domain, by key-value pair or SQL database (Web SQL)
 
-#### Describe the difference between `<script>`, `<script async>` and `<script defer>`.
-*Normal execution* '<script></script>'
+#### Describe the difference between `<script>`, `<script async>` and `<script defer>`
+*Normal execution* '<script>'
 This is the default behavior of the <script> element. Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.
 
-*Deferred execution* '<script defer>/<script defer>'
+*Deferred execution* '<script defer>'
 Simply put: delaying script execution until the HTML parser has finished. A positive effect of this attribute is that the DOM will be available for your script. However, since not every browser supports defer yet, don’t rely on it!
 
-*Asynchronous execution* '<script async></script async>'
+*Asynchronous execution* '<script async>'
 Don’t care when the script will be available? Asynchronous is the best of both worlds: HTML parsing may continue and the script will be executed as soon as it’s ready. I’d recommend this for scripts such as Google Analytics.
 To explain is a lot easier, defer is the equivalent of jQuery.ready() - it means your script is guaranteed that the DOM is ready and all HTML has been parsed. Async means the file can potential load before the DOM is even parsed, which means you more than likely will not have access to the DOM.
 
 #### Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
 
-- Here is what happens when a browser loads a page
+*Here is what happens when a browser loads a page*
 - Fetch the HTML page (e.g. index.html)
 - Begin parsing the HTML
 - The parser encounters a <script> tag referencing an external script file.
