@@ -167,7 +167,7 @@ To explain is a lot easier, defer is the equivalent of jQuery.ready() - it means
 *Here is what happens when a browser loads a page*
 - Fetch the HTML page (e.g. index.html)
 - Begin parsing the HTML
-- The parser encounters a <script> tag referencing an external script file.
+- The parser encounters a script tag referencing an external script file.
 - The browser requests the script file. Meanwhile, the parser blocks and stops parsing the other HTML on your page.
 - After some time the script is downloaded and subsequently executed.
 - The parser continues parsing the rest of the HTML document.
@@ -177,7 +177,7 @@ Any script can insert its own HTML via document.write() or other DOM manipulatio
 Because your browser does not know my-script.js isn't going to modify the document until it has been downloaded & executed, the parser stops parsing.
 
 *Antiquated recommendation*
-The old approach to solve this problem was to put <script> tags at the bottom of your <body>, because this ensures the parser isn't blocked until the very end.
+The old approach to solve this problem was to put script tags at the bottom of your body, because this ensures the parser isn't blocked until the very end.
 
 This approach has its own problem: the browser cannot start downloading the scripts until the entire document is parsed. For larger websites with large scripts and stylesheets, being able to download the script as soon as possible is very important for performance. If your website doesn't load within 2 seconds, people will go to another website.
 
