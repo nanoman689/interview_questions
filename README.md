@@ -1,17 +1,17 @@
 #### General Questions:
 
-* What did you learn yesterday/this week?
+## What did you learn yesterday/this week?
 
 More about building single page applications with AngularJS
 
-* What excites or interests you about coding?
+## What excites or interests you about coding?
 All the kinds of applications that you can build
 
-* What is a recent technical challenge you experienced and how did you solve it?
+### What is a recent technical challenge you experienced and how did you solve it?
 
 Recently it's been about learning more about APIs and intergradting them into my applications. I solved it by calling console.log to see what the data I was getting back from the API call and then pulled out the data I needed from that JSON file.
 
-* What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+## What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
 
 For the UI it depends on what the the application is for and what kind of users will be using this application. Is it for more general use, so does it need a more simple UI or is it for more techinical people that need more information then a UI.
 
@@ -21,7 +21,7 @@ Maintainability It's a good idea to document things, have good clean code that p
 
 Technology Use what works best for the situation at hand. Also make sure what you are using is going to be supported later one when you want to update things.
   
-* Talk about your preferred development environment.
+## Talk about your preferred development environment.
 
 MacOX
 Brackets / Sublime
