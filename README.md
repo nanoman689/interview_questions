@@ -1,17 +1,17 @@
 #### General Questions:
 
-## What did you learn yesterday/this week?
+### What did you learn yesterday/this week?
 
 More about building single page applications with AngularJS
 
-#### What excites or interests you about coding?
+### What excites or interests you about coding?
 All the kinds of applications that you can build
 
-##### What is a recent technical challenge you experienced and how did you solve it?
+### What is a recent technical challenge you experienced and how did you solve it?
 
 Recently it's been about learning more about APIs and intergradting them into my applications. I solved it by calling console.log to see what the data I was getting back from the API call and then pulled out the data I needed from that JSON file.
 
-#### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+### What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
 
 For the UI it depends on what the the application is for and what kind of users will be using this application. Is it for more general use, so does it need a more simple UI or is it for more techinical people that need more information then a UI.
 
@@ -21,17 +21,17 @@ Maintainability It's a good idea to document things, have good clean code that p
 
 Technology Use what works best for the situation at hand. Also make sure what you are using is going to be supported later one when you want to update things.
   
-#### Talk about your preferred development environment.
+### Talk about your preferred development environment.
 
 MacOX
 Brackets / Sublime
 chrome / firefox
 git
 
-#### Which version control systems are you familiar with?
+### Which version control systems are you familiar with?
 git
 
-#### Can you describe your workflow when you create a web page?
+### Can you describe your workflow when you create a web page?
 - Create a prototype with just rough elements.
 - Set up a basic structure with just html and rough links
 - Break down the code into smaller bits and build up from there.
@@ -41,7 +41,7 @@ git
 - Try to combine them into one file if possible.
 - If it's using something like Bootstrap, try to create the new styles outside of Bootstraps
 
-#### Can you describe the difference between progressive enhancement and graceful degradation?
+### Can you describe the difference between progressive enhancement and graceful degradation?
 
 - Graceful degradation is the practice of building your web functionality so that it provides a certain level of user experience in more modern browsers, but it will also degrade gracefully to a lower level of user in experience in older browsers. This lower level is not as nice to use for your site visitors, but it does still provide them with the basic functionality that they came to your site to use; things do not break for them.
 
@@ -50,45 +50,45 @@ git
 - In other words, graceful degradation starts from the status quo of complexity and tries to fix for the lesser experience whereas progressive enhancement starts from a very basic, working example and allows for constant extension for future environments. Degrading gracefully means looking back whereas enhancing progressively means looking forward whilst keeping your feet on firm ground.
 
 
-#### How would you optimize a website's assets/resources?
+### How would you optimize a website's assets/resources?
 - File concatention and minification (using browserify for example)
 - Minification of images
 - Try to avoid too many calles to outside databases and queries.
 
-#### How many resources will a browser download from a given domain at a time?
+### How many resources will a browser download from a given domain at a time?
 - Chrome it is 6, Firefox 6, IE11 is 8
   * What are the exceptions?
 - The limits are per domain, so you could do a wildcard DNS.
 
-#### Name 3 ways to decrease page load (perceived or actual load time).
+### Name 3 ways to decrease page load (perceived or actual load time).
 - Minimize images
 - Minimize and combine Javascript
 - Minimize CSS automatically or by removing unused styles.
 
-#### If you jumped on a project and they used tabs and you used spaces, what would you do?
+### If you jumped on a project and they used tabs and you used spaces, what would you do?
 - Suggest the project utilize something like EditorConfig
 - Keep with what they are doing and bring it up in a meeting later.
 
-#### Describe how you would create a simple slideshow page.
+### Describe how you would create a simple slideshow page.
 - Wrap up the images in a div tag
 - Use CSS to hide the images that do not need to be displayed.
 - Use Javascript to create a navigvation (using an array possibly)
 
-#### If you could master one technology this year, what would it be?
+### If you could master one technology this year, what would it be?
 Angular JS
 
-#### Explain the importance of standards and standards bodies.
+### Explain the importance of standards and standards bodies.
 Standards describe how a thing does and should work. It is extremely important especially in software, because the thing can be used by many people for different perposes. For example, there are several engines for JavaScript including V8, JavaScriptCore, Rhino, etc, and if there is no standard for the language, developers and users cannot feel ensured when doing something with it.
 
-#### What is Flash of Unstyled Content? How do you avoid FOUC?
+### What is Flash of Unstyled Content? How do you avoid FOUC?
 - It is caused when content is loaded before styles are applied to the content. It happens when style tags are placed after other content, or applied asynchronously, for example, by scripts.
 
 - To avoid FOUC, the styles should be placed in order that they can be loaded and applied in the same rendering process as HTML elements do. The easiest way is to place them in the head, and avoid applying styles by scripts at the first load.
 
-#### Explain what ARIA and screenreaders are, and how to make a website accessible.
+### Explain what ARIA and screenreaders are, and how to make a website accessible.
 They are for accessibility. To make a website accessible, we should try to follow the usage of HTML elements, for example, h1 for headers and section for sections. Also it's good to take care of using visual contents, such as not forgetting to add an alt attribute to img tags.
 
-#### Explain some of the pros and cons for CSS animations versus JavaScript animations.
+### Explain some of the pros and cons for CSS animations versus JavaScript animations.
 - **CSS**
 - Pro Use GPU so less CPU effecient, they do not consume Javascript event loops
 - Cons Hard to handle as the CSS doesn't contain logic and not supported in older browsers.
@@ -97,7 +97,7 @@ They are for accessibility. To make a website accessible, we should try to follo
 - Pro Easy to handle as they have logic
 - Con Use CPU 
 
-#### What does CORS stand for and what issue does it address?
+### What does CORS stand for and what issue does it address?
 CORS stands for cross-origin resource sharing. There could be situation where some resources should be allowed from sources having different origin. CORS is a standard to enable cross-site HTTP requests for:
 
 - AJAX API call
@@ -109,18 +109,18 @@ CORS stands for cross-origin resource sharing. There could be situation where so
 
 #### HTML Questions:
 
-#### What does a `doctype` do?
+### What does a `doctype` do?
 The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration refers to a Document Type Definition
 
 HTML 5 <!DOCTYPE html>
 XML 1.0 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-#### What's the difference between standards mode and quirks mode?
+### What's the difference between standards mode and quirks mode?
 There are now three modes used by the layout engines in web browsers: quirks mode, almost standards mode, and full standards mode. In quirks mode, layout emulates nonstandard behavior in Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards. In full standards mode, the behavior is (hopefully) the behavior described by the HTML and CSS specifications. In almost standards mode, there are only a very small number of quirks implemented.
 
 Biggest one being the CSS box model.
 
-#### What's the difference between HTML and XHTML?
+### What's the difference between HTML and XHTML?
 - Short answer: xHTML is XML, HTML is not.
 - xHTML is the XML version of HTML. 
 - To understand this answer you have to know what XML is : it's a markup language designed to format data in a way that's easy to understand for a human, and also easy to parse for a machine.
@@ -128,29 +128,29 @@ Biggest one being the CSS box model.
 - Now at the beginning of the web, the markup language that was used for web pages was HTML. It looks a lot like XML but it's not an XML language because it does not respect the XML standard.
 - Later, xHTML was invented with respect to the XML standard. It is more strict than html because you have to respect all the xml rules (Closing tag for each opening tag, attributes have to have a value etc.)
 
-#### Are there any problems with serving pages as `application/xhtml+xml`?
+### Are there any problems with serving pages as `application/xhtml+xml`?
 - The XHTML page must be well formed.If you forgot to closed a element and the browser will not to closed it and cause error.
 - For "application/xhtml+xml", some old browsers no supports.
 
-#### How do you serve a page with content in multiple languages?
+### How do you serve a page with content in multiple languages?
 - You must have translated/localized pages on the server for each language you intend to support.
 - Your server must recognize the browser’s language request.
 - You must carefully name the files for the localized pages, so the server has a systematic way of locating them.
 - You need a method for serving a generic page when you don’t have the requested language.
 
-#### What kind of things must you be wary of when design or developing for multilingual sites?
+### What kind of things must you be wary of when design or developing for multilingual sites?
 Another problem with many solutions: setting the default language, using Unicode encoding, using the ‘lang’ attribute, being aware of standard font sizes and text direction, and language word length (may affect layout).
 
-#### What are `data-` attributes good for?
+### What are `data-` attributes good for?
 The HTML5 data- attribute is a new addition that assigns custom data to an element. It was built to store sensitive or private data that is exclusive to a page or application, for which there are no other matching attributes or elements.
 
-#### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+### Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 The main building blocks are centred on HTML 5, CSS3, Javascript and SVG. Where HTML is a language to define the mark-up of a document (titles, headers, body, footer, tables, input forms etc.), CSS is a language to define style (formatting, colours, shades and the like). Javascript is a programming/scripting language and SVG is a language for creating 2D scalable vector graphics and images.
 
-#### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
+### Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
 They are all storage on the client side. cookies is small piece of key-value pair (A key-value pair is a set of two linked data items: a key, which is a unique identifier for some item of data, and the value, which is either the data that is identified or a pointer to the location of that data. Key-value pairs are frequently used in lookup tables, hash tables and configuration files.) with a expire time. sessionStorage is on persistent and scope only to current windows. localStorage is persisitent and socop only to domain, by key-value pair or SQL database (Web SQL)
 
-#### Describe the difference between `<script>`, `<script async>` and `<script defer>`
+### Describe the difference between `<script>`, `<script async>` and `<script defer>`
 *Normal execution (script)* 
 - This is the default behavior of the script element. Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.
 
@@ -162,7 +162,7 @@ They are all storage on the client side. cookies is small piece of key-value pai
 
 To explain is a lot easier, defer is the equivalent of jQuery.ready() - it means your script is guaranteed that the DOM is ready and all HTML has been parsed. Async means the file can potential load before the DOM is even parsed, which means you more than likely will not have access to the DOM.
 
-#### Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+### Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
 
 *Here is what happens when a browser loads a page*
 - Fetch the HTML page (e.g. index.html)
@@ -203,7 +203,7 @@ Scripts with the defer attribute are executed in order (i.e. first script 1, the
 
 Unlike async scripts, defer scripts are only executed after the entire document has been loaded.
 
-#### What is progressive rendering?
+### What is progressive rendering?
 Progressive rendering is the name given to techniques used to render content for display as quickly as possible.
 
 It used to be much more prevalent in the days before broadband internet but it's still useful in modern development as mobile data connections are becoming increasingly popular (and unreliable!)
@@ -213,13 +213,13 @@ It used to be much more prevalent in the days before broadband internet but it's
 - Lazy loading of images where (typically) some javascript will load an image when it comes into the browsers viewport instead of loading all images at page load.
 - Prioritizing visible content (or above the fold rendering) where you include only the minimum css/content/scripts necessary for the amount of page that would be rendered in the users browser first to display as quickly as possible, you can then use deferred javascript (domready/load) to load in other resources and content.
 
-#### Have you used different HTML templating languages before?
+### Have you used different HTML templating languages before?
 Only Bourbon and Neat
 
 
 #### CSS Questions:
 
-#### What is the difference between classes and ID's in CSS?
+### What is the difference between classes and ID's in CSS?
 Classes are the general term while ID's are unique. You can use classes over and over, but you can only use ID's once. Best example would be to say that in a class room of students, the students would be the Class, while Joe Smith would be the ID of that student.
 
 
@@ -319,7 +319,7 @@ It gets created on the global object (that is, the window), thus it operates in 
 
 *null* null is a variable that is defined to have a null value.
 
-#### How would you go about checking for any of these states?
+### How would you go about checking for any of these states?
 For Undeclared:
 Use strict mode
 
@@ -340,8 +340,54 @@ if( variable === null ) {
 }
 ```
 
-* What is a closure, and how/why would you use one?
-* What's a typical use case for anonymous functions?
+### How do you organize your code? (module pattern, classical inheritance?)
+
+
+
+
+### What is closure?
+A closure is a way of keeping access to variables in a function after that function has returned.
+
+- A closure is the local variables for a function — kept alive after the function has returned
+- A closure is a stack-frame which is not deallocated when the function returns (as if a 'stack-frame' were malloc'ed instead of being on the stack!).
+
+The following code returns a reference to a function:
+
+```javascript
+function sayHello2(name) {
+    var text = 'Hello ' + name; // Local variable
+    var say = function() { console.log(text); }
+    return say;
+}
+var say2 = sayHello2('Bob');
+say2(); // logs "Hello Bob"
+```
+
+### What's the difference between host objects and native objects?
+*Native Objects*
+Object in an ECMAScript implementation whose semantics are fully defined by this specification rather than by the host environment.
+
+Examples: Object (constructor), Date, Math, parseInt, eval, string methods like indexOf and replace, array methods
+
+*Host Objects*
+Object supplied by the host environment to complete the execution environment of ECMAScript.
+NOTE Any object that is not native is a host object.
+
+Examples: window, document, location, history, XMLHttpRequest, setTimeout, getElementsByTagName, querySelectorAll
+
+### What's a typical use case for anonymous functions?
+*Pros*
+- Flexibility. An asynchronous function with a callback paramater could be reached by one of many different code paths and it could be harried to have to write a named function to account for every single possible edge case.
+- Speed. It plays heavily in to the hacker mentality. Bolt things on to it until it works.
+- Smaller file sizes, even if trivially so, but every bit counts on the web.
+- Simpler AST? I would assume that anonymous functions are generated at runtime and so the JIT won't muck about with mapping the name to instructions, but I'm just guessing at this point.
+- Quicker dispatching? Not sure about this one either. Guessing again.
+
+*Cons*
+- It's hideous and unreadable
+- It adds to the confusion when you're nested nuts deep in a swamp of callbacks (which, to be fair, probably means you're writing poorly constructed code to begin with, but it's quite common).
+- For someone without a functional background it can be a bizarre concept to grok
+
 * How do you organize your code? (module pattern, classical inheritance?)
 * What's the difference between host objects and native objects?
 
@@ -453,11 +499,9 @@ null === undefined is false
 
 '0' === false is false
 
-
-
 * Explain the same-origin policy with regards to JavaScript.
 
-#### Make this work:
+### Make this work:
 ```javascript
 duplicate([1,2,3,4,5]);
 
