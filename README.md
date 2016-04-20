@@ -311,35 +311,187 @@ function foo(){
 ```
   
   
-* What's the difference between a variable that is: `null`, `undefined` or undeclared?
-  * How would you go about checking for any of these states?
+### What's the difference between a variable that is: `null`, `undefined` or undeclared?
+*undeclared* A variable is undeclared when it does not use the var keyword. 
+It gets created on the global object (that is, the window), thus it operates in a different space as the declared variables.  
+
+*undefined* Something is undefined when it hasn’t been defined yet. If you call a variable or function without having actually created it yet the parser will give you an not defined error.
+
+*null* null is a variable that is defined to have a null value.
+
+#### How would you go about checking for any of these states?
+For Undeclared:
+Use strict mode
+
+For Undefined:
+```javascript
+if (typeof(variable) !== "undefined") {
+  console.log('variable is not undefined');
+} else {
+  console.log('variable is undefined');
+}
+```
+For Null
+```javascript
+if( variable === null ) {
+  console.log('variable is null');
+} else {
+  console.log('variable is not null');
+}
+```
+
 * What is a closure, and how/why would you use one?
 * What's a typical use case for anonymous functions?
 * How do you organize your code? (module pattern, classical inheritance?)
 * What's the difference between host objects and native objects?
-* Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
-* What's the difference between `.call` and `.apply`?
-* Explain `Function.prototype.bind`.
-* When would you use `document.write()`?
+
+### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
+- *function Person() {}* 
+Declares a function (but does not execute it).
+It will usually have some code between the curly brackets.
+
+- *var person = Person()*
+Declares a variable (person), invokes a function (Person) and sets the value of person to the return of the function.
+
+- *var person = new Person()*
+Creates a new instance of an object based on the Person function. So the variable (person) is now an Object, not just a string or a number.
+
+### What's the difference between `.call` and `.apply`?
+The difference is that apply lets you invoke the function with arguments as an array; call requires the parameters be listed explicitly. A useful mnemonic is "A for array and C for comma."
+
+The apply() method is identical to call(), except apply() requires an array as the second parameter. The array represents the arguments for the target method.
+
+### Explain `Function.prototype.bind`.
+The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+### When would you use `document.write()`?
+The document.write methods outputs a string directly into page.
+
+When document is loading, a script may document.write(text) into the document. The text will be rendered same way as if it were in HTML.
+
+document.write (henceforth DW) does not work in XHTML
+
 * What's the difference between feature detection, feature inference, and using the UA string?
-* Explain AJAX in as much detail as possible.
-* Explain how JSONP works (and how it's not really AJAX).
+
+### Explain AJAX in as much detail as possible.
+Asynchronous JavaScript and XML, the method of exchanging data with a server, and updating parts of a web page - without reloading the entire page.”
+
+AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
+
+Classic web pages, (which do not use AJAX) must reload the entire page if the content should change.
+
+Examples of applications using AJAX: Google Maps, Gmail, YouTube, and Facebook.
+
+### Explain how JSONP works (and how it's not really AJAX).
+
+When you make your request to a server that is JSONP enabled, you pass a special parameter that tells the server a little bit about your page. That way, the server is able to nicely wrap up its response in a way that your page can handle.
+
+JSONP, when the server receives the "callback" parameter, it wraps up the result a little differently, returning something like this:
+`mycallback({ foo: 'bar' });`
+
 * Have you ever used JavaScript templating?
   * If so, what libraries have you used?
-* Explain "hoisting".
+
+### Explain "hoisting".
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
 * Describe event bubbling.
-* What's the difference between an "attribute" and a "property"?
+
+### What's the difference between an "attribute" and a "property"?
+
+JS DOM objects have properties. These properties are kind of like instance variables for the particular element. As such, a property can be different types (boolean, string, etc.). Properties can be accessed using jQuery’s prop method (as seen below) and also by interacting with the object in vanilla JS.
+
+$('#linkID').prop('href');
+returns "http://example.com/page2.html"
+
+$('#linkID').prop('name');
+returns "linkName"
+
+$('#linkID').prop('id');
+returns "linkID"
+
+$('#linkID').prop('className');
+returns "link classes"
+
+
+Attributes are in the HTML itself, rather than in the DOM. They are very similar to properties, but not quite as good. When a property is available it’s recommended that you work with properties rather than attributes.
+
+An attribute is only ever a string, no other type.
+
+$('input').prop('checked')
+returns true
+
+$('input').attr('checked');
+returns "checked"
+
 * Why is extending built-in JavaScript objects not a good idea?
+
 * Difference between document load event and document ready event?
-* What is the difference between `==` and `===`?
+
+
+### What is the difference between `==` and `===`?
+
+- Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.
+- Two numbers are strictly equal when they are numerically equal (have the same number value). NaN is not equal to anything, including NaN. - Positive and negative zeros are equal to one another.
+- Two Boolean operands are strictly equal if both are true or both are false.
+- Two objects are strictly equal if they refer to the same Object.
+- Null and Undefined types are == (but not ===). [I.e. (Null==Undefined) is true but (Null===Undefined) is false]
+
+0 == false is true
+
+0 === false is false, because they are of a different type
+
+1 == "1"    is true, automatic type conversion for value only
+
+1 === "1"    is false, because they are of a different type
+
+null == undefined is true
+
+null === undefined is false
+
+'0' == false is true
+
+'0' === false is false
+
+
+
 * Explain the same-origin policy with regards to JavaScript.
-* Make this work:
+
+#### Make this work:
 ```javascript
-duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+duplicate([1,2,3,4,5]);
+
+outputs [1,2,3,4,5,1,2,3,4,5]
+
+Array.prototype.duplicator = function(){
+    return this.concat(this);
+}
+alert([1,2,3,4,5].duplicator());
+
 ```
+
 * Why is it called a Ternary expression, what does the word "Ternary" indicate?
 * What is `"use strict";`? what are the advantages and disadvantages to using it?
-* Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
+
+### Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
+
+```javascript
+for (number=1: number<100; i++;)
+    if ( number %=== 0 );
+      print('buzz');
+      } if (number % 15){
+          print('fizzBuzz');
+        } if (number % 3){
+          print('fizz')
+          } else {
+            print(number);
+          }
+        }
+      }
+number(100);
+```
+
+
 * Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 * Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 * Explain what a single page app is and how to make one SEO-friendly.
@@ -385,26 +537,35 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 
 #### Coding Questions:
 
-*Question: What is the value of `foo`?*
+### Question: What is the value of `foo`?*
 ```javascript
 var foo = 10 + '20';
 ```
+10
 
-*Question: How would you make this work?*
+### Question: How would you make this work?*
+result 7
 ```javascript
-add(2, 5); // 7
-add(2)(5); // 7
+add(2, 5);
+add(2)(5);
+```
+```javascript
+var add = function(x) {
+    return function(y) { return x + y; };
+}
 ```
 
-*Question: What value is returned from the following statement?*
+### Question: What value is returned from the following statement?*
 ```javascript
 "i'm a lasagna hog".split("").reverse().join("");
 ```
+“goh angasal a m’i”
 
-*Question: What is the value of `window.foo`?*
+### Question: What is the value of `window.foo`?*
 ```javascript
 ( window.foo || ( window.foo = "bar" ) );
 ```
+bar, if intially window.foo was false, undefined or zero else it will retain its value.
 
 *Question: What is the outcome of the two alerts below?*
 ```javascript
@@ -415,20 +576,27 @@ var foo = "Hello";
 })();
 alert(foo + bar);
 ```
+Hello World and ReferenceError: bar is not defined
 
-*Question: What is the value of `foo.length`?*
+### Question: What is the value of `foo.length`?*
 ```javascript
 var foo = [];
 foo.push(1);
 foo.push(2);
 ```
+foo.length = 2
 
-*Question: What is the value of `foo.x`?*
+### Question: What is the value of `foo.x`?*
 ```javascript
 var foo = {n: 1};
 var bar = foo;
 foo.x = foo = {n: 2};
 ```
+undefined
+
+- determines that foo.x refers to a property x of the {n: 1} object
+- assigns {n: 2} to foo
+- assigns the new value of foo  {n: 2}  to the property x of the {n: 1} object.
 
 *Question: What does the following code print?*
 ```javascript
@@ -438,6 +606,28 @@ setTimeout(function() {
 }, 0);
 console.log('three');
 ```
+
+
+#### jQuery Questions:
+
+### Explain “chaining”
+Chaining in jQuery is when you apply multiple method events one after the other. $().split().join()
+
+### What does .end() do? .end()
+Stops an event that is in queue so the next even can occur
+
+### What is the effects (or fx) queue? 
+The effects queue as a build up of multiple events that are triggered on the same object 
+
+### What is the difference between .get(), [], and .eq()?
+
+### What is the difference between .bind(), .live(), and .delegate()?
+
+### What is the difference between $ and $.fn? Or just what is $.fn. 
+$ is just the short hand of $.fn
+
+### Optimize this selector: javascript $(“.foo div#bar:eq(0)”)
+$(“.foo div#bar”).eq(0);
 
 #### Fun Questions:
 
