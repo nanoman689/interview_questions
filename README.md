@@ -1,7 +1,6 @@
 #### General Questions:
 
 ### What did you learn yesterday/this week?
-
 More about building single page applications with AngularJS
 
 ### What excites or interests you about coding?
@@ -440,6 +439,13 @@ JSONP, when the server receives the "callback" parameter, it wraps up the result
 
 ### Explain "hoisting".
 Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+Any variable declared inside of a block is moved to the top.
+
+In JavaScript, a variable can be declared after it has been used.
+
+In other words; a variable can be used before it has been declared.
+
 
 * Describe event bubbling.
 
