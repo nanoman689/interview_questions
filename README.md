@@ -223,7 +223,17 @@ Only Bourbon and Neat
 Classes are the general term while ID's are unique. You can use classes over and over, but you can only use ID's once. Best example would be to say that in a class room of students, the students would be the Class, while Joe Smith would be the ID of that student.
 
 
-* What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+### What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+-*Normalize.css preserves useful defaults rather than "unstyling" everything* For example, elements like sup or sub "just work" after including normalize.css (and are actually made more robust) whereas they are visually indistinguishable from normal text after including reset.css. So, normalize.css does not impose a visual starting point (homogeny) upon you. This may not be to everyone's taste. The best thing to do is experiment with both and see which gels with your preferences.
+
+-*Normalize.css corrects some common bugs that are out of scope for reset.css* It has a wider scope than reset.css, and also provides bug fixes for common problems like: display settings for HTML5 elements, the lack of font inheritance by form elements, correcting font-size rendering for pre, SVG overflow in IE9, and the button styling bug in iOS.
+
+-*Normalize.css doesn't clutter your dev tools. A common irritation when using reset.css* is the large inheritance chain that is displayed in browser CSS debugging tools. This is not such an issue with normalize.css because of the targeted stylings.
+
+-*Normalize.css is more modular* The project is broken down into relatively independent sections, making it easy for you to potentially remove sections (like the form normalizations) if you know they will never be needed by your website.
+
+-*Normalize.css has better documentation* The normalize.css code is documented inline as well as more comprehensively in the GitHub Wiki. This means you can find out what each line of code is doing, why it was included, what the differences are between browsers, and more easily run your own tests. The project aims to help educate people on how browsers render elements by default, and make it easier for them to be involved in submitting improvements.
+
 * Describe Floats and how they work.
 * Describe z-index and how stacking context is formed.
 * Describe BFC(Block Formatting Context) and how it works.
@@ -258,12 +268,49 @@ Classes are the general term while ID's are unique. You can use classes over and
 
 #### JS Questions:
 
-* Explain event delegation
-* Explain how `this` works in JavaScript
-* Explain how prototypal inheritance works
-* What do you think of AMD vs CommonJS?
-* Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
-  * What needs to be changed to properly make it an IIFE?
+### Explain event delegation
+Event delegation allows us to attach a single event listener, to a parent element, that will fire for all descendants matching a selector, whether those descendants exist now or are added in the future.
+
+### Explain how `this` works in JavaScript
+- By default, this refers to the global object.
+- When a function is called as a property on a parent object, this refers to the parent object inside that function.
+- When a function is called with the new operator, this refers to the newly created object inside that function.
+- When a function is called using call or apply, this refers to the first argument passed to call or apply. If the first argument is null or not an object, this refers to the global object.
+
+### Explain how prototypal inheritance works
+In a nutshell, prototypal inheritance is when an object inherits from another object. This differs from classical inheritance, in which a class inherits from another class.
+
+In a classical language, classes typically define the structure of objects, but in a prototypal language, the objects themselves define their structure, and this structure can be inherited and modified by other objects at runtime.
+
+Prototypal inheritance first appeared in Self and has since appeared in many other languages, but these days most people think of JavaScript when they think of prototypal inheritance.
+
+### What do you think of AMD vs CommonJS?
+Basically CommonJS specifies that you need to have a the require() function to fetch dependencies, the exports variable to export module contents and some module identifier (that describes the location of the module in question in relation to this module) that is used to require the dependencies(source). CommonJS has various implementations, for example Node.js that you mentioned.
+
+CommonJS was not particularly designed with browsers in mind so, it doesn't fit to the browser environment very well (I really have no source for this, it just says so everywhere, for example the RequireJS site.). Apparently this has something to do with asynchronous loading etc.
+
+On the contrary, RequireJS implements AMD, which is designed to suit the browser environment(source). Apparently AMD started as an offspin of CommonJS Transport format and evolved into its own module definition API. Hence the similiarities between the two. The new thing in AMD is the define() -function that allows the module to declare its dependencies before being loaded.
+
+So CommonJS and AMD are JavaScript module definition APIs that have different implementations, but both come from the same origins.
+
+- *AMD* is more suited for the browser, because it supports asynchronous loading of module dependencies.
+- *RequireJS* is an implementation of AMD, while at the same time trying to keep the spirit of CommonJS (mainly in the module identifiers).
+
+### Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
+IIFE stands for Immediately Invoked Function Expressions
+
+An IIFE is an anonymous function that is created and then immediately invoked. It’s not called from anywhere else (hence why it’s anonymous), but runs just after being created.
+
+So, in this case, foo is not being called.
+
+* What needs to be changed to properly make it an IIFE?
+
+```javascript
+function foo(){
+}();
+```
+  
+  
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
 * What is a closure, and how/why would you use one?
