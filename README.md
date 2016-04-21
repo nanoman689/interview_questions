@@ -508,8 +508,13 @@ When you make your request to a server that is JSONP enabled, you pass a special
 JSONP, when the server receives the "callback" parameter, it wraps up the result a little differently, returning something like this:
 `mycallback({ foo: 'bar' });`
 
-* Have you ever used JavaScript templating?
-  * If so, what libraries have you used?
+### Have you ever used JavaScript templating?
+Yes, but only jQuery
+
+**If so, what libraries have you used?**
+-jQuery
+
+
 
 ### Explain "hoisting".
 Hoisting is JavaScript's default behavior of moving declarations to the top.
@@ -519,6 +524,15 @@ Any variable declared inside of a block is moved to the top.
 In JavaScript, a variable can be declared after it has been used.
 
 In other words; a variable can be used before it has been declared.
+
+     x = 5;
+
+     elem = document.getElementById("demo"); 
+     elem.innerHTML = x;
+
+     var x;
+
+result is 5
 
 
 * Describe event bubbling.
