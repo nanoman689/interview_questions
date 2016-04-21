@@ -424,8 +424,27 @@ An anonymous function is a function that was declared without any named identifi
 - It adds to the confusion when you're nested nuts deep in a swamp of callbacks (which, to be fair, probably means you're writing poorly constructed code to begin with, but it's quite common).
 - For someone without a functional background it can be a bizarre concept to grok
 
-* How do you organize your code? (module pattern, classical inheritance?)
-* What's the difference between host objects and native objects?
+### How do you organize your code? (module pattern, classical inheritance?)
+**Modular pattern**
+Modular pattern imitates the classes in conventional software engineering and it mainly focuses on the public and private access to methods & variables. The module pattern goals are to reduce the use of globally scoped variables, so as to decreasing the chances of conflicting with other code throughout an application.
+
+This is also regarded as the most commonly used design pattern and it is also widely accepted in a number of large projects such as jQuery, Dojo, ExtJS and YUI.
+
+**Advantages**
+- Organized and clean approach for developers
+- We can encapsulate data.
+- More clean code in the global namespace(avoiding conflicts).
+
+**Disadvantages**
+- We cannot access private methods
+- We can extend Private methods and functions.
+
+**Classical Inheritance**
+The classical inheritance in a way is similar to the inheritancein Java or C. Those who have backgrounds in those programming languages must be familiar. So by using classical inheritance, we are recreating the basic programming language’s behavior i.e. using classes and objects, which are instances of those classes.
+
+So a classical pattern is used together with the“prototype”keyword added to the constructor and the newoperator.
+- Call a constructor function.
+- Have a child’s prototype point to the parent’s prototype.
 
 ### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 - *function Person() {}* 
