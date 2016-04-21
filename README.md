@@ -402,6 +402,15 @@ NOTE Any object that is not native is a host object.
 
 Examples: window, document, location, history, XMLHttpRequest, setTimeout, getElementsByTagName, querySelectorAll
 
+### What's a anonymous functions?
+
+An anonymous function is a function that was declared without any named identifier to refer to it. As such, an anonymous function is usually not accessible after its initial creation.
+
+    function hello() {
+      alert('Hello world');
+    }
+    hello();
+
 ### What's a typical use case for anonymous functions?
 *Pros*
 - Flexibility. An asynchronous function with a callback paramater could be reached by one of many different code paths and it could be harried to have to write a named function to account for every single possible edge case.
@@ -692,17 +701,34 @@ console.log('three');
 Chaining in jQuery is when you apply multiple method events one after the other. $().split().join()
 
 ### What does .end() do? .end()
-Stops an event that is in queue so the next even can occur
+- Stops an event that is in queue so the next even can occur
+- It can also go back to the parent set.
 
 ### What is the effects (or fx) queue? 
-The effects queue as a build up of multiple events that are triggered on the same object 
+Queues are the foundation for all animations in jQuery, they allow a series functions to be executed asynchronously on an element. Methods such as .slideUp(), .slideDown(), .fadeIn(), and .fadeOut() all use .animate(), which leverages queues to build up the series of steps that will transition one or more CSS values throughout the duration of the animation.
 
 ### What is the difference between .get(), [], and .eq()?
+.get() and .eq() both return a single "element" from a jQuery object array, but they return the single element in different forms.
+
+.eq() returns it as a jQuery object, meaning the DOM element is wrapped in the jQuery wrapper, which means that it accepts jQuery functions.
+
+.get() return a raw DOM element. You may manipulate it by accessing its attributes and invoking its functions as you would on a raw DOM element. But it loses its identity as a jQuery-wrapped object, so a jQuery function like .fadeIn won't work.
 
 ### What is the difference between .bind(), .live(), and .delegate()?
+.bind() attacheds events to elements that exist or match the selector at the time the call is made. Any elements created afterwards or that match going forward because the class was changed, will not fire the bound event.
+
+.live() works for existing and future matching elements. Before jQuery 1.4 this was limited to the following events: click, dblclick mousedown, mouseup, mousemove, mouseover, mouseout, keydown, keypress, keyup
+
+.delegate() method behaves in a similar fashion to the .live() method, but instead of attaching the selector/event information to the document, you can choose where it is anchored. Just like the .live() method, this technique uses event delegation to work correctly.
+
+In short: .bind() will only apply to the items you currently have selected in your jQuery object. .live() will apply to all current matching elements, as well as any you might add in the future.
 
 ### What is the difference between $ and $.fn? Or just what is $.fn. 
-$ is just the short hand of $.fn
+$ is a function (specifically, a variable pointing to the jQuery function — an alias). $.fn is a property on that function, which points to the prototype of the internal init function jQuery uses to create instances, as we can see in the jQuery code:
+
+jQuery.fn.init.prototype = jQuery.fn;
+
+$.fn is there so that it's easy to add properties to it. When you create jQuery objects, they have those properties, because of JavaScript's prototypical inheritance. The most common properties to add to it are, of course, functions that do things (jQuery plug-ins).
 
 ### Optimize this selector: javascript $(“.foo div#bar:eq(0)”)
 $(“.foo div#bar”).eq(0);
