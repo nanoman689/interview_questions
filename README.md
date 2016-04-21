@@ -447,14 +447,14 @@ So a classical pattern is used together with the“prototype”keyword added to 
 - Have a child’s prototype point to the parent’s prototype.
 
 ### Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
-- *function Person() {}* 
+**function Person() {}**
 Declares a function (but does not execute it).
 It will usually have some code between the curly brackets.
 
-- *var person = Person()*
+**var person = Person()**
 Declares a variable (person), invokes a function (Person) and sets the value of person to the return of the function.
 
-- *var person = new Person()*
+**var person = new Person()**
 Creates a new instance of an object based on the Person function. So the variable (person) is now an Object, not just a string or a number.
 
 ### What's the difference between `.call` and `.apply`?
@@ -472,7 +472,25 @@ When document is loading, a script may document.write(text) into the document. T
 
 document.write (henceforth DW) does not work in XHTML
 
-* What's the difference between feature detection, feature inference, and using the UA string?
+### What's the difference between feature detection, feature inference, and using the UA string?
+
+**Feature detection** is to verify if a feature works in a particular browser or not. The feature can be either a CSS property or a Java Script Method.
+
+if (window.XMLHttpRequest) {
+    new XMLHttpRequest();
+}
+
+**Feature inference** is to assume that a CSS property/ JS method is available in all the browsers, by verifying it in a single browser. The fact is it can or it cannot be available. For ex. the text( ) function is implemented in Chrome , but it is not implemented in Firefox which will give out an error eventually when used. So we have to be careful.
+
+if (document.getElementsByTagName) {
+    element = document.getElementById(id);
+}
+
+**Checking the UA string** is a software which identifies your operating system, browser and its version. When you a visit a particular webpage, the browser sends a user-agent string to the host, implying that only the content/data related to that particular browser should be displayed.
+
+if (navigator.userAgent.indexOf("MSIE 7") > -1){
+    //do something
+}
 
 ### Explain AJAX in as much detail as possible.
 Asynchronous JavaScript and XML, the method of exchanging data with a server, and updating parts of a web page - without reloading the entire page.”
@@ -484,7 +502,7 @@ Classic web pages, (which do not use AJAX) must reload the entire page if the co
 Examples of applications using AJAX: Google Maps, Gmail, YouTube, and Facebook.
 
 ### Explain how JSONP works (and how it's not really AJAX).
-
+**JavaScript Object Notation with padding**
 When you make your request to a server that is JSONP enabled, you pass a special parameter that tells the server a little bit about your page. That way, the server is able to nicely wrap up its response in a way that your page can handle.
 
 JSONP, when the server receives the "callback" parameter, it wraps up the result a little differently, returning something like this:
