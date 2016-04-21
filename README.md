@@ -73,24 +73,33 @@ git
 - Use CSS to hide the images that do not need to be displayed.
 - Use Javascript to create a navigvation (using an array possibly)
 
-```
-<div id="my-slideshow">
-  	<ul class="bjqs">
-      <li><!-- Any content you like --></li>
-      <li><!-- Can go inside these slides--></li>
-	</ul>
-</div>
-```
+     slideshow { 
+            margin: 50px auto; 
+            position: relative; 
+            width: 240px; 
+            height: 240px; 
+            padding: 10px; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+        }
 
-```
-jQuery(document).ready(function($) {
-	$('#banner-fade').bjqs({
-		'height' : 320,
-		'width' : 620,
-		'responsive' : true
-	});
-});
-```
+    slideshow > div { 
+        position: absolute; 
+        top: 10px; 
+        left: 10px; 
+        right: 10px; 
+      bottom: 10px; 
+    }
+
+    $("#slideshow > div:gt(0)").hide();
+
+      setInterval(function() { 
+      $('#slideshow > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slideshow');
+     },  3000);
 
 ### If you could master one technology this year, what would it be?
 Angular JS
