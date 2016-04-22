@@ -352,16 +352,39 @@ Say you had three flags in a row, your CSS would look like this:
   
 
 
-* What are your favourite image replacement techniques and which do you use when?
+### What are your favourite image replacement techniques and which do you use when?
+[Nine Techniques for CSS Image Replacement](https://css-tricks.com/css-image-replacement/)
 
-* How would you approach fixing browser-specific styling issues?
+### What are your favourite image replacement techniques and which do you use when?
+-Using cross-browser CSS coding. 
+The internet explorer is a hard and using this on IE is very hard. 
 
-* How do you serve your pages for feature-constrained browsers?
+-Making responsive websites.
+But this means having a menu button instead of a bar in many places that we don't want, it can be a problematch.
+
+-Checking with caniuse.com
+[caniuse.com](http://caniuse.com/)
+
+### How do you serve your pages for feature-constrained browsers?
+
+The browser market will catch up and you won’t have to update anything because the hacks you implemented won’t be needed, and won’t even be actually called. Plus: it’s less frustrating. You can actually design stuff the way you want, make it both look better and with cleaner code. 
+
   * What techniques/processes do you use?
 
-* What are the different ways to visually hide content (and make it available only for screen readers)?
+### What are the different ways to visually hide content (and make it available only for screen readers)?
+**visibility: hidden; and/or display:none;**
+These styles will hide text from all users. The text is removed from the visual flow of the page and is ignored by screen readers. Do not use this CSS if you want the content to be read by a screen reader. But DO use it for content you don't want read by screen readers.
 
-* Have you ever used a grid system, and if so, what do you prefer?
+**width:0px, height:0px or other 0 pixel sizing techniques**
+As above, because an element with no height or width is removed from the flow of the page, most screen readers will ignore this content. HTML width and height may give the same result. Do not size content to 0 pixels if you want the content to be read by a screen reader. Content styled with font-size:0px or line-height:0 may work, though the elements would still take horizontal space on the screen. All of these techniques may result in search engine penalties as they may interpreted to be malicious.
+
+**text-indent: -10000px;**
+This approach moves the content to the left 10000 pixels - thus off the visible screen. The actual value matters little, so long as it is positioned off-screen. Screen readers will still read text with this style. However, if a link or form element is given this style, it may result in a focus indicator (the dotted lines or 'marching ants' that surround a focused link) that extends from where the element should be located in the page to the place it is actually located (way to the left). This is not very pretty. This approach also causes issues in right-to-left languages. As such, this approach may be a viable option if the element does not contain navigable elements, though better techniques are available.
+
+### Have you ever used a grid system, and if so, what do you prefer?
+I have only ever used the Bootstraps grid system.
+
+So for a grid system, you’d have things like .col-3 and .col-9 for a sidebar and a “main”, in a 12 columns layout. First, the styling is in the HTML. Second, what if you want to put that sidebar on the right and not the left? Well you’d have to modify your HTML structure, instead of changing 2 words in your CSS.
 
 * Have you used or implemented media queries or mobile specific layouts/CSS?
 
