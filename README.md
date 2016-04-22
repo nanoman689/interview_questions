@@ -303,9 +303,54 @@ A block formatting context is a box that satisfies at least one of the following
 -The value of "position" is neither "static" nor "relative".
 
 
-* What are the various clearing techniques and which is appropriate for what context?
+### What are the various clearing techniques and which is appropriate for what context?
+A clearfix is a way for an element to automatically clear its child elements, so that you don't need to add additional markup. It's generally used in float layouts where elements are floated to be stacked horizontally.
 
-* Explain CSS sprites, and how you would implement them on a page or site.
+- Empty Div Method
+    <div style="clear:both;"></div>
+
+- Overflow Method
+    Setting auto or hidden overflow property on parent will expand it to contain the floats.
+
+- The Psuedo Method: uses the parent's :after to add the clear: both property
+    
+    .clearfix:after { 
+    content: "."; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
+    }
+
+### Explain CSS sprites, and how you would implement them on a page or site.
+A CSS sprite is a big image containing several background images at once. It’s a collection of images combined in one big image. You choose the background image you want to show by playing with the dimensions of the element (which acts like a viewport) and the background position.
+
+-Bandwidth: you just have 1 HTTP request for one image, and the combined image is often lighter than separate images combined
+-Rendering: as soon as the sprite is called and displayed once (and even cached), you can re-use it with other elements. Works well with the :hover pseudo-state. There’s no blinking.
+-Maintenance: it’s easier in Photoshop or Sketch to export a single asset with everything
+
+Say you had three flags in a row, your CSS would look like this:
+
+    .flags-canada, .flags-mexico, .flags-usa {
+      background-image: url('../images/flags.png');
+      background-repeat: no-repeat;
+    }
+
+    .flags-canada {
+      height: 128px;
+      background-position: -5px -5px;
+    }
+
+    .flags-usa {
+      height: 135px;
+      background-position: -5px -143px;
+    }
+
+    .flags-mexico {
+      height: 147px;
+      background-position: -5px -288px;
+  
+
 
 * What are your favourite image replacement techniques and which do you use when?
 
