@@ -261,36 +261,101 @@ Classes are the general term while ID's are unique. You can use classes over and
 
 -*Normalize.css has better documentation* The normalize.css code is documented inline as well as more comprehensively in the GitHub Wiki. This means you can find out what each line of code is doing, why it was included, what the differences are between browsers, and more easily run your own tests. The project aims to help educate people on how browsers render elements by default, and make it easier for them to be involved in submitting improvements.
 
-* Describe Floats and how they work.
-* Describe z-index and how stacking context is formed.
-* Describe BFC(Block Formatting Context) and how it works.
+### Describe Floats and how they work.
+Float is a CSS positioning property. To understand its purpose and origin, we can look to print design. In a print layout, images may be set into the page such that text wraps around them as needed. This is commonly and appropriately called "text wrap".
+
+In page layout programs, the boxes that hold the text can be told to honor the text wrap, or to ignore it. Ignoring the text wrap will allow the words to flow right over the image like it wasn't even there. This is the difference between that image being part of the flow of the page (or not). Web design is very similar.
+
+In web design, page elements with the CSS float property applied to them are just like the images in the print layout where the text flows around them. Floated elements remain a part of the flow of the web page. This is distinctly different than page elements that use absolute positioning. Absolutely positioned page elements are removed from the flow of the webpage, like when the text box in the print layout was told to ignore the page wrap. Absolutely positioned page elements will not affect the position of other elements and other elements will not affect them, whether they touch each other or not.
+
+    #sidebar {
+      float: right;			
+    }
+       
+### Describe z-index and how stacking context is formed.
+The z-index property in CSS controls the vertical stacking order of elements that overlap. As in, which one appears as if it is physically closer to you. z-index only effects elements that have a position value other than static (the default).
+
+Elements can overlap for a variety of reasons, for instance relative positioning has nudged it over something else. Negative margin has pulled the element over another. Absolutely positioned elements overlap each other. All sorts of reasons.
+
+Without any z-index value, elements stack in the order that they appear in the DOM (the lowest one down at the same hierarchy level appears on top). Elements with non-static positioning will always appear on top of elements with default static positioning.
+
+Also note that nesting plays a big role. If an element B sits on top of element A, a child element of element A can never be higher than element B.
+
+
+#### Describe BFC(Block Formatting Context) and how it works.
+A block formatting context is a part of a visual CSS rendering of a Web page. It is the region in which the layout of block boxes occurs and in which floats interact with each other.
+
+A block formatting context is created by one of the following:
+
+-The root element or something that contains it
+-Floats (elements where float is not none)
+-Absolutely positioned elements (elements where position is absolute or fixed)
+-Inline-blocks (elements with display: inline-block)
+-Table cells (elements with display: table-cell, which is the default for HTML table cells)
+-Table captions (elements with display: table-caption, which is the default for HTML table captions)
+-Elements where overflow has a value other than visible
+-Flex boxes (elements with display: flex or inline-flex)
+
+A block formatting context is a box that satisfies at least one of the following:
+-The value of "float" is not "none",
+-The used value of "overflow" is not "visible",
+-The value of "display" is "table-cell", "table-caption", or "inline-block",
+-The value of "position" is neither "static" nor "relative".
+
+
 * What are the various clearing techniques and which is appropriate for what context?
+
 * Explain CSS sprites, and how you would implement them on a page or site.
+
 * What are your favourite image replacement techniques and which do you use when?
+
 * How would you approach fixing browser-specific styling issues?
+
 * How do you serve your pages for feature-constrained browsers?
   * What techniques/processes do you use?
+
 * What are the different ways to visually hide content (and make it available only for screen readers)?
+
 * Have you ever used a grid system, and if so, what do you prefer?
+
 * Have you used or implemented media queries or mobile specific layouts/CSS?
+
 * Are you familiar with styling SVG?
+
 * How do you optimize your webpages for print?
+
 * What are some of the "gotchas" for writing efficient CSS?
+
 * What are the advantages/disadvantages of using CSS preprocessors?
   * Describe what you like and dislike about the CSS preprocessors you have used.
+
 * How would you implement a web design comp that uses non-standard fonts?
+
 * Explain how a browser determines what elements match a CSS selector.
+
 * Describe pseudo-elements and discuss what they are used for. 
-* Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+
+* Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in 
+different box models.
+
 * What does ```* { box-sizing: border-box; }``` do? What are its advantages?
+
 * List as many values for the display property that you can remember.
+
 * What's the difference between inline and inline-block?
+
 * What's the difference between a relative, fixed, absolute and statically positioned element?
+
 * The 'C' in CSS stands for Cascading.  How is priority determined in assigning styles (a few examples)?  How can you use this system to your advantage?
+
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+
 * Have you played around with the new CSS Flexbox or Grid specs?
+
 * How is responsive design different from adaptive design?
+
 * Have you ever worked with retina graphics? If so, when and what techniques did you use?
+
 * Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
 
 #### JS Questions:
