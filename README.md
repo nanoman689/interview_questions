@@ -386,11 +386,75 @@ I have only ever used the Bootstraps grid system.
 
 So for a grid system, you’d have things like .col-3 and .col-9 for a sidebar and a “main”, in a 12 columns layout. First, the styling is in the HTML. Second, what if you want to put that sidebar on the right and not the left? Well you’d have to modify your HTML structure, instead of changing 2 words in your CSS.
 
-* Have you used or implemented media queries or mobile specific layouts/CSS?
+### Have you used or implemented media queries or mobile specific layouts/CSS?
+Yes, but only a few times.
 
-* Are you familiar with styling SVG?
+What media queries do is rather than looking for a type of device they look at the capability of the device, and you can use them to check for all kinds of things. For example:
+-width and height (of the browser window)
+-device width and height
+-orientation – for example is a phone in landscape or portrait mode?
+-resolution
 
-* How do you optimize your webpages for print?
+They tend to look something like this:
+     @media only screen and (max-device-width: 480px) {
+
+	 }
+
+Where, in the above case, any device up to a maxium resolution of 480 would execute the code
+
+### Are you familiar with styling SVG?
+
+
+Some Advantages:
+
+**No Unnecessary HTTP Requests**
+
+When you use images in an html document with the <img> tag, you are defining a file that the user's browser will request. This request will take up bandwidth and require more precious time to download. If your image is instead a set of dom nodes, it cuts that extra HTTP request out, making your website faster and more user friendly.
+
+**Easy Interactive Scripting**
+
+Despite the browser wars, the DOM API, across all browsers, offers an extensive amount of flexibility in terms of scripting interactivity, which extends to SVG elements. Styling SVG happens through CSS. Having browser event APIs available to SVG elements makes interactive behavior scripting a cinch. Simply attach a handler to a specific node of the SVG element, and you're set.
+
+Examples of what you can do with SVG
+
+**Graph** Because SVG's biggest strength is basic vector shapes, it naturally works very well for graphs and infographics. Not only is it great for creating static graphs from given numbers, but it is also well suited for "live" graphs, fed by AJAX requests, user input, or randomly generated data.
+Road Map Road maps consist of hard lines and exact shapes. These shapes can be represented well with vector graphics, and lend themselves to zooming into the map for further detail.
+
+**Complex UI elements** Let's say you wanted a UI element that looked like a stacked pyramid of circles. How would you do this in HTML and CSS? Well, you'd first create a bunch of divs for each hole, giving them each a certain border radius and border styles. Then you'd position them within a containing div. Now, what if you wanted a single gradient over the whole thing? You'd likely have to use masking, or some other technique. You'd rather not use images, as they aren't scalable and can't be programmatically re-rendered or changed. Instead, why not draw the element in Illustrator, and save it out as an SVG file? This would allow you to have a single, scalable element without worrying about managing multiple divs.
+
+**Logos Most logos are vector-based** You could define an SVG document as your logo, and drop it anywhere, scaling on the fly to whatever size it needs to be without compromising quality or taking up too much bandwidth.
+Simple Games It's no secret that canvas is suited well for game rendering. Part of the reason for this is that games are often not dependent on vector graphics; rather, they use pixel-based art and animation. However, SVG is a great alternative for games that require less character animation and more information display (think Sudoku).
+
+### How do you optimize your webpages for print?
+**Create A Stylesheet For Print**
+Of course you have at least one stylesheet to control the layout of the page and formatting of the content, but do you have a stylesheet to control how your page will look like in print? Add the print style sheet, with the media attribute set to "print", at the end of the list of stylesheets in the header. This will allow you to create custom CSS classes applied only at the time of print. Make sure your structure CSS file is given a media attribute of "all."
+
+     <!-- Main stylesheet on top -->
+     <link rel="stylesheet" type="text/css" href="/global.css" mce_href="/global.css" href="/global.css" mce_href="/global.css" media="all" />
+     <!-- Print only, on bottom -->
+     <link rel="stylesheet" type="text/css" href="/print.css" mce_href="/print.css" href="/print.css" mce_href="/print.css" media="print" />
+
+**Avoid Unnecessary HTML Tables**
+As much as I try to steer clear of using tables, there's no way to avoid the occasional <tr><td> experience. Forms are much easier to code when using tables. Tables are also great for...get this...data tables. Other than these two situations, a programmer should try to avoid using table, especially when considering print. Controlling the content area of your website can be extremely challenging when the page structure is trapped in a table.
+
+**Know Which Portions Of The Page Don't Have Any Print Value**
+You know that awesome banner you have at the top of your site? Ditch it. And those ads on the right and left sides of the page? Goodbye. Web visitors print your page because of the content on it, not to see the supporting images on your website. Create a class called no-print and add that class declaration to DIVS, images, and other elements that have no print value:
+
+    .no-print { display:none; }
+    <!-- Example -->
+      <div id="navigation" class="no-print">
+	<!-- who needs navigation when you're looking at a printed piece? -->
+      </div>
+
+**Use Page Breaks**
+Page breaks in the browser aren't as reliable as they are in Microsoft Word, especially considering the variable content lengths on dynamically created pages, but when utilized well make all the different in printing your website. The CSS specs don't provide a lot of print flexibility but the page-break-before / page-break-after properties prove to be useful. Page breaks are much more reliable when used with DIV elements instead of table cells.
+
+     page-break	{ page-break-before: always; } 
+     put this class into your main.css file with "display:none;"
+     
+**Size Your Page For Print**
+Obviously your computer monitor can provide a large amount of width to view a page, but I recommend setting the content area width to 600px (an inch equivalent may be better, but I try to deal with one unit specifically, which is pixels). This ensures that words wont bleed outside the print area. Use this width measurement with the page break DIVs you've created in your stylesheet. After you know the width of your printed content area, adjust the dimensions of content blocks inside the main content area if necessary.  
+
 
 * What are some of the "gotchas" for writing efficient CSS?
 
