@@ -136,6 +136,25 @@ CORS stands for cross-origin resource sharing. There could be situation where so
 
 #### HTML Questions:
 
+### What is a `<div>` ?
+
+The `<div>` tag is nothing more than a container unit that encapsulates other page elements and divides the HTML document into sections. Web developers use `<div>` elements to group together HTML elements and apply CSS styles to many elements at once.
+
+### What is the difference between HTML tags `<div>` and `<span>`?
+
+div is a block element, span is inline.
+
+This means that to use them semantically, divs should be used to wrap sections of a document, while spans should be used to wrap small portions of text, images, etc.
+
+Think about it like this:
+
+There are lots of block elements (linebreaks before and after) defined in HTML, and lots of inline tags (no linebreaks).
+
+But in modern HTML all elements are supposed to have meanings: a `<p>` is a paragraph, an `<li>` is a list item, etc., and we're supposed to use the right tag for the right purpose -- not like in the old days when we indented using `<blockquote>` whether the content was a quote or not.
+
+So, what do you do when there is no meaning to the thing you're trying to do? There's no meaning to a 400px-wide column, is there? You just want your column of text to be 400px wide because that suits your design.
+For this reason, they added two more elements to HTML: the generic, or meaningless elements `<div>` and `<span>`, because otherwise, people would go back to abusing the elements which do have meanings.
+
 ### What does a `doctype` do?
 The doctype declaration should be the very first thing in an HTML document, before the tag. The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in. The doctype declaration refers to a Document Type Definition
 
@@ -628,6 +647,25 @@ No, but I think you would is to swap out low resolution graphics with higher res
 Sometimes we need to position something in a relative manner in regards of itself, rather than taking the parent or window container as a reference. While we can do this with absolute positioning as well, it is not always an easy task and sometimes we won't even have the chance to know up front the size of the element we are actually repositioning. This is where translate comes to the rescue, specially when handling relative-to-itself reposition operations based on percentages. I have had negative experiences with this approach when positioning Adobe Flash objects containing interactive controls though, so handle with care.
 
 #### JS Questions:
+
+### Explain methods vs functions
+A function is a piece of code that is called by name. It can be passed data to operate on (i.e. the parameters) and can optionally return data (the return value).
+
+All data that is passed to a function is explicitly passed.
+
+A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:
+
+-A method is implicitly passed the object on which it was called.
+-A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
+
+Or simply
+A method is on an object.
+A function is independent of an object.
+
+### Explain what the difference between git and github
+Git is a version control system; think of it as a series of snapshots (commits) of your code. You see a path of these snapshots, in which order they where created. You can make branches to experiment and come back to snapshots you took. Git is a piece of software that you install locally on your computer which handles 'version control' for you.
+
+GitHub, is a web-page on which you can publish your Git repositories and collaborate with other people. GitHub also lets you store identical directoies (aka repositories, or repo's), it's a hub for Git repositories. Github gives you a bunch more features, like a nice website to allow you to compare changes and administrate user accounts. But it's main feature is to host your repos, and to make it easier for you to push and pull from your collaborators.
 
 ### Explain event delegation
 Event delegation allows us to attach a single event listener, to a parent element, that will fire for all descendants matching a selector, whether those descendants exist now or are added in the future.
