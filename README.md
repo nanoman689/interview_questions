@@ -612,11 +612,20 @@ Only Bootstrap and Bourbon.io. The only thing I would change would possibly be s
 ### Have you played around with the new CSS Flexbox or Grid specs?
 Been playing with [http://flexboxfroggy.com/](http://flexboxfroggy.com/)
 
-* How is responsive design different from adaptive design?
+### How is responsive design different from adaptive design?
+Responsive sites and adaptive sites are the same in that they both change appearance based on the browser environment they are being viewed on (the most common thing: the browser's width).
 
-* Have you ever worked with retina graphics? If so, when and what techniques did you use?
+Responsive websites respond to the size of the browser at any given point. No matter what the browser width may be, the site adjusts its layout (and perhaps functionality) in a way that is optimized to the screen. Is the browser 300px wide or 30000px wide? It doesn't matter because the layout will respond accordingly. Well, at least if it's done correctly!
 
-* Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
+Adaptive websites adapt to the width of the browser at a specific points. In other words, the website is only concerned about the browser being a specific width, at which point it adapts the layout.
+
+Another way to think about it is the difference between smooth and snap design. Responsive design is smooth because the layout fluidly adjusts regardless of what device it is viewed on. Adaptive design, on the other hand, snaps into place because the page is serving something different because of the browser or device it is viewed on 
+
+### Have you ever worked with retina graphics? If so, when and what techniques did you use?
+No, but I think you would is to swap out low resolution graphics with higher resolution graphics or even SVG graphics.
+
+### Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
+Sometimes we need to position something in a relative manner in regards of itself, rather than taking the parent or window container as a reference. While we can do this with absolute positioning as well, it is not always an easy task and sometimes we won't even have the chance to know up front the size of the element we are actually repositioning. This is where translate comes to the rescue, specially when handling relative-to-itself reposition operations based on percentages. I have had negative experiences with this approach when positioning Adobe Flash objects containing interactive controls though, so handle with care.
 
 #### JS Questions:
 
