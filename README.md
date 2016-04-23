@@ -510,10 +510,41 @@ Keep in mind that when a browser is doing selector matching it has one element (
 
 On the other hand, if you start by matching the leftmost part of the selector... what do you match it against? You have to start walking the DOM, looking for nodes that might match it. Just discovering that there's nothing matching that leftmost part might take a while.
 
-* Describe pseudo-elements and discuss what they are used for. 
+As the browser parses HTML, it constructs an internal document tree representing all the elements to be displayed. It then matches elements to styles specified in various stylesheets, according to the standard CSS cascade, inheritance, and ordering rules. In Mozilla's implementation (and probably others as well), for each element, the CSS engine searches through style rules to find a match. The engine evaluates each rule from right to left, starting from the rightmost selector (called the "key") and moving through each selector until it finds a match or discards the rule. (The "selector" is the document element to which the rule should apply.)
 
-* Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in 
-different box models.
+### Describe pseudo-elements and discuss what they are used for. 
+
+A CSS pseudo-element is used to style specified parts of an element.
+
+For example, it can be used to:
+
+-Style the first letter, or line, of an element
+-Insert content before, or after, the content of an element
+
+    ::first-letter - Would add a special style to the first letter of a text
+    ::before - Would insert something before the element
+    ::after - Would insert something after the element.
+
+### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+
+All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout.
+
+The CSS box model is essentially a box that wraps around HTML elements, and it consists of: margins, borders, padding, and the actual content.
+
+When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the full size of an element, you must also add the padding, borders and margins.
+
+IE8 and earlier versions of IE, included padding and border in the width property.
+To fix this problem, add a <!DOCTYPE html> to the HTML page.
+
+The box-sizing CSS property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification.
+
+You can change the box model by setting the box-sizing property. Some values are: content-box (default), padding-box, and border-box)
+
+Content-box: width and height includes content but not padding/border/margin
+
+Padding-box: include up to padding
+
+Border-box: include up to border, but not margin
 
 * What does ```* { box-sizing: border-box; }``` do? What are its advantages?
 
