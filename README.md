@@ -456,14 +456,59 @@ Page breaks in the browser aren't as reliable as they are in Microsoft Word, esp
 Obviously your computer monitor can provide a large amount of width to view a page, but I recommend setting the content area width to 600px (an inch equivalent may be better, but I try to deal with one unit specifically, which is pixels). This ensures that words wont bleed outside the print area. Use this width measurement with the page break DIVs you've created in your stylesheet. After you know the width of your printed content area, adjust the dimensions of content blocks inside the main content area if necessary.  
 
 
-* What are some of the "gotchas" for writing efficient CSS?
+### What are some of the "gotchas" for writing efficient CSS?
+-Avoid key selectors that match large numbers of elements (tag and universal selectors)
+-Prefer class and ID selectors over tag selectors
+-Avoid redundant selectors
+-Preferably don't use * (universal selector)
+-Try group and reuse common properties.
+-Use efficient CSS selectors
+-Avoid a universal key selector.
+-Allow elements to inherit from ancestors, or use a class to apply a style to multiple elements.
+-Make your rules as specific as possible. 
+-Prefer class and ID selectors over tag selectors.
+-Remove redundant qualifiers. 
+-These qualifiers are redundant:
+    ID selectors qualified by class and/or tag selectors
+    Class selectors qualified by tag selectors (when a class is only used for one tag, which is a good design practice anyway).
+-Avoid using descendant selectors, especially those that specify redundant ancestors.
+    For example, the rule body ul li a {...} specifies a redundant body selector, since all elements are descendants of the body tag.
+-Use class selectors instead of descendant selectors.
+-Avoid CSS expressions
+-Put CSS in the document head
 
-* What are the advantages/disadvantages of using CSS preprocessors?
-  * Describe what you like and dislike about the CSS preprocessors you have used.
 
-* How would you implement a web design comp that uses non-standard fonts?
+### What are the advantages/disadvantages of using CSS preprocessors?
+**Advantages**
+-Better oranization from nesting them
+-Ability to define variables and mixins
+-Have mathematical functions
+-Joining multiple files
+-In some cases, cleaner syntaxes
 
-* Explain how a browser determines what elements match a CSS selector.
+**Disadvantages**
+-Mainly for designers not comfortable on the command line or programming concepts
+-Debugging, due to having a compilation step, the browser is not interpreting the source files, meaning the CSS line numbers are now irrelevant when trying to debug. This makes debugging a lot harder.
+-Some require setting up or upgrading.
+  
+	**Describe what you like and dislike about the CSS preprocessors you have used**
+	Bootstrap - Very well documented and rather easy to use, plus there is a lot of examples of how to create complex
+	layouts out there. Also allows you to 'get the ball rolling' in that if a client wants to see something right 
+    away, Bootstrap is a good choice for this as it's a bit more visually interesting then raw HTML with no CSS.
+
+	Bourbon - Is more for SASS, but it gets the job done. It supports a lot of pre defined mixins as well that 
+    provide a huge collection to hand CCS features so you don't have to deal with vendor prefixes or CSS hacks.
+
+### How would you implement a web design comp that uses non-standard fonts?
+-Use @font-face to render a font (uses src for hard resources)
+-Can just link to a webfont as a stylesheet, use @import, or javascript
+
+### Explain how a browser determines what elements match a CSS selector.
+They're actually read by the browser engines from right to left. So they find the children first and then check their parents to see if they match the rest of the parts of the rule.
+
+Keep in mind that when a browser is doing selector matching it has one element (the one it's trying to determine style for) and all your rules and their selectors and it needs to find which rules match the element. This is different from the usual jQuery thing, say, where you only have one selector and you need to find all the elements that match that selector.
+
+On the other hand, if you start by matching the leftmost part of the selector... what do you match it against? You have to start walking the DOM, looking for nodes that might match it. Just discovering that there's nothing matching that leftmost part might take a while.
 
 * Describe pseudo-elements and discuss what they are used for. 
 
