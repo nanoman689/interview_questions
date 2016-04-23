@@ -546,19 +546,71 @@ Padding-box: include up to padding
 
 Border-box: include up to border, but not margin
 
-* What does ```* { box-sizing: border-box; }``` do? What are its advantages?
+### What does ```* { box-sizing: border-box; }``` do? What are its advantages?
+This applies box-sizing to all elemenets. This makes working with the box model quite a bit easier. This is beacuase normally, even if a div has a declared with of 50%, as soon as padding or border is applied, it will be larger then 50%. With the border-box method, padding and borders are "inside" the div rather then "outside". It's worth nothing that universal selector doesn't apply to psudeo elements.
 
-* List as many values for the display property that you can remember.
+### List as many values for the display property that you can remember.
+-none
+-inherit
+-inline
+-inline-block
+-block
+-table
+-table-cell
 
-* What's the difference between inline and inline-block?
+### What's the difference between inline and inline-block?
+**Inline**
+-Respects left and right margins and padding
+-Doesn’t respect top and bottom  margins and padding
+-Doesn’t have a width and height
+-Allow other elements to sit to its left and right
 
-* What's the difference between a relative, fixed, absolute and statically positioned element?
+**Block**
+-Respects all margins and paddings
+-Respects width and height
+-Line break after
 
-* The 'C' in CSS stands for Cascading.  How is priority determined in assigning styles (a few examples)?  How can you use this system to your advantage?
+**Inline-block**
+-Placed like an inline element (on the same line) but behaves as block
+-Respects all margins and paddings
+-Respects width and height
+-Allow other elements to sit to its left and right
 
-* What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+### What's the difference between a relative, fixed, absolute and statically positioned element?
+**Static** 
+This is the default for every single page element. Different elements don't have different default values for positioning, they all start out as static. Static doesn't mean much, it just means that the element will flow into the page as it normally would. The only reason you would ever set an element to position: static is to forcefully-remove some positioning that got applied to an element outside of your control. This is fairly rare, as positioning doesn't cascade.
 
-* Have you played around with the new CSS Flexbox or Grid specs?
+**Relative** 
+This type of positioning is probably the most confusing and misused. What it really means is "relative to itself". If you set position: relative; on an element but no other positioning attributes (top, left, bottom or right), it will no effect on it's positioning at all, it will be exactly as it would be if you left it as position: static; But if you DO give it some other positioning attribute, say, top: 10px;, it will shift it's position 10 pixels DOWN from where it would NORMALLY be. I'm sure you can imagine, the ability to shift an element around based on it's regular position is pretty useful. I find myself using this to line up form elements many times that have a tendency to not want to line up how I want them to.
+
+There are two other things that happen when you set position: relative; on an element that you should be aware of. One is that it introduces the ability to use z-index on that element, which doesn't really work with statically positioned elements. Even if you don't set a z-index value, this element will now appear on top of any other statically positioned element. You can't fight it by setting a higher z-index value on a statically positioned element. The other thing that happens is it limits the scope of absolutely positioned child elements. Any element that is a child of the relatively positioned element can be absolutely positioned within that block. This brings up some powerful opportunities which I talk about here.
+
+**Absolute** 
+This is a very powerful type of positioning that allows you to literally place any page element exactly where you want it. You use the positioning attributes top, left bottom and right to set the location. Remember that these values will be relative to the next parent element with relative (or absolute) positioning. If there is no such parent, it will default all the way back up to the <html> element itself meaning it will be placed relatively to the page itself.
+
+The trade-off, and most important thing to remember, about absolute positioning is that these elements are removed from the flow of elements on the page. An element with this type of positioning is not affected by other elements and it doesn't affect other elements. This is a serious thing to consider every time you use absolute positioning. It's overuse or improper use can limit the flexibility of your site.
+
+**Fixed** 
+This type of positioning is fairly rare but certainly has its uses. A fixed position element is positioned relative to the viewport, or the browser window itself. The viewport doesn't change when the window is scrolled, so a fixed positioned element will stay right where it is when the page is scrolled, creating an effect a bit like the old school "frames" days. Take a look at this site (update: dead link, sorry), where the left sidebar is fixed. This site is a perfect example for since it exhibits both good and bad traits of fixed positioning. The good is that it keeps the navigation present at all times on the page and it creates and interested effect on the page. The bad is that there are some usability concerns. On my smallish laptop, the content in the sidebar is cut off and there is no way from me to scroll down to see the rest of that content. Also if I scroll all the way down to the footer, it overlaps the footer content not allowing me to see all of that. Cool effect, can be useful, but needs to be thoroughly tested.
+
+### The 'C' in CSS stands for Cascading.  How is priority determined in assigning styles (a few examples)?  
+CSS priority is determined by specificity and inheritance.
+Every CSS rule has a particular weight, meaning it could be more or less important than the others or equally important. This weight defines which properties will be applied to an element when there are conflicting rules.
+
+-Specificity: ID → class, psuedo-class → element, psudo-element
+-Inheritence: specified value → computed value → used value → actual value
+
+    **How can you use this system to your advantage?**
+    -When starting work on the CSS, use generic selectors, and add specificity as you go along;
+    -Using advanced selectors doesn’t mean using unnecessarily complicated ones;
+    -Rely more on specificity than on the order of selectors, so that your style sheets are 
+    easier to edit and maintain (especially by others).
+ 
+### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+Only Bootstrap and Bourbon.io. The only thing I would change would possibly be some of the documentation of Bourbon, as I had a hard time getting that up and running corrrectly and there where some issues trying to create some custom CSS inside of Bourbon as well.
+
+### Have you played around with the new CSS Flexbox or Grid specs?
+Been playing with [http://flexboxfroggy.com/](http://flexboxfroggy.com/)
 
 * How is responsive design different from adaptive design?
 
