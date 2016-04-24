@@ -136,11 +136,11 @@ CORS stands for cross-origin resource sharing. There could be situation where so
 
 #### HTML Questions:
 
-### What is a `<div>` ?
+### What is a div ?
 
-The `<div>` tag is nothing more than a container unit that encapsulates other page elements and divides the HTML document into sections. Web developers use `<div>` elements to group together HTML elements and apply CSS styles to many elements at once.
+The div tag is nothing more than a container unit that encapsulates other page elements and divides the HTML document into sections. Web developers use div elements to group together HTML elements and apply CSS styles to many elements at once.
 
-### What is the difference between HTML tags `<div>` and `<span>`?
+### What is the difference between HTML tags div and span ?
 
 div is a block element, span is inline.
 
@@ -150,7 +150,7 @@ Think about it like this:
 
 There are lots of block elements (linebreaks before and after) defined in HTML, and lots of inline tags (no linebreaks).
 
-But in modern HTML all elements are supposed to have meanings: a `<p>` is a paragraph, an `<li>` is a list item, etc., and we're supposed to use the right tag for the right purpose -- not like in the old days when we indented using `<blockquote>` whether the content was a quote or not.
+But in modern HTML all elements are supposed to have meanings: a p is a paragraph, an li is a list item, etc., and we're supposed to use the right tag for the right purpose -- not like in the old days when we indented using blockquote whether the content was a quote or not.
 
 So, what do you do when there is no meaning to the thing you're trying to do? There's no meaning to a 400px-wide column, is there? You just want your column of text to be 400px wide because that suits your design.
 For this reason, they added two more elements to HTML: the generic, or meaningless elements `<div>` and `<span>`, because otherwise, people would go back to abusing the elements which do have meanings.
