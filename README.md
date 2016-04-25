@@ -1072,10 +1072,28 @@ for (number=1: number<100; i++;)
 number(100);
 ```
 
+### Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+Form most languages, global variables are considered a “bad thing”. JS is no different, but it probably has more severe consequences than most languages.
 
-* Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
-* Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
-* Explain what a single page app is and how to make one SEO-friendly.
+Some points on why global variables are generally bad
+-It’s harder to read the code and reason about it when variables seem to appear out of thin air (but really from the global scope).
+_Anyone can update a global variable from any point in the program at any time (and from any thread if there’s more than one going).
+_General code smell - if you're too lazy to put the variable only where it needs to be then what other corners are you cutting?
+-It’s probable that you'll encounter global variable name clashes. Since there’s only one namespace you're more likely to double up on a variable name.
+
+### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
+
+
+### Explain what a single page app is and how to make one SEO-friendly.
+What is is and is not
+-It is a Single Page Web App - Built on any number of popular javascript frameworks like Backbone.js, ember.js, or our favorite angular.js
+
+-It is not a single page template - Like a theme you might purchase on Theme Forest, or on wrapbootstrap.com
+
+-It is not an infinite scrolling site - A page that scrolls forever (infinitely, duh), like what you see on pinterest.com. Infinite scrolling pages use ajax to load more content when the user gets near the bottom of the page.
+
+To handle SRO with Angluar, you would want to use when you define your application and configure your routes file, just add a simple $locationProvider.html5Mode(true); and you're good to go. Angular will handle everything for you, and fall back gracefully if the browser doesn't support HTML5.
+
 * What is the extent of your experience with Promises and/or their polyfills?
 * What are the pros and cons of using Promises instead of callbacks?
 * What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
