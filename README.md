@@ -577,7 +577,9 @@ Bourbon - Is more for SASS, but it gets the job done. It supports a lot of pre d
 provide a huge collection to hand CCS features so you don't have to deal with vendor prefixes or CSS hacks.
 
 ### How would you implement a web design comp that uses non-standard fonts?
+
 -Use @font-face to render a font (uses src for hard resources)
+
 -Can just link to a webfont as a stylesheet, use @import, or javascript
 
 ### Explain how a browser determines what elements match a CSS selector.
