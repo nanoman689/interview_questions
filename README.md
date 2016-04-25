@@ -73,6 +73,8 @@ git
 - Use CSS to hide the images that do not need to be displayed.
 - Use Javascript to create a navigvation (using an array possibly)
 
+
+```
      slideshow { 
             margin: 50px auto; 
             position: relative; 
@@ -100,6 +102,8 @@ git
         .end()
         .appendTo('#slideshow');
      },  3000);
+```
+
 
 ### If you could master one technology this year, what would it be?
 Angular JS
