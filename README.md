@@ -477,23 +477,38 @@ Obviously your computer monitor can provide a large amount of width to view a pa
 
 ### What are some of the gotchas for writing efficient CSS?
 -Avoid key selectors that match large numbers of elements (tag and universal selectors)
+
 -Prefer class and ID selectors over tag selectors
+
 -Avoid redundant selectors
+
 -Preferably don't use * (universal selector)
+
 -Try group and reuse common properties.
+
 -Use efficient CSS selectors
+
 -Avoid a universal key selector.
+
 -Allow elements to inherit from ancestors, or use a class to apply a style to multiple elements.
+
 -Make your rules as specific as possible. 
+
 -Prefer class and ID selectors over tag selectors.
+
 -Remove redundant qualifiers. 
+
 -These qualifiers are redundant:
     ID selectors qualified by class and/or tag selectors
     Class selectors qualified by tag selectors (when a class is only used for one tag, which is a good design practice anyway).
+
 -Avoid using descendant selectors, especially those that specify redundant ancestors.
     For example, the rule body ul li a {...} specifies a redundant body selector, since all elements are descendants of the body tag.
+
 -Use class selectors instead of descendant selectors.
+
 -Avoid CSS expressions
+
 -Put CSS in the document head
 
 
