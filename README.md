@@ -959,6 +959,7 @@ When a user clicks the button the event first fires on the button itself, then b
 
 JS DOM objects have properties. These properties are kind of like instance variables for the particular element. As such, a property can be different types (boolean, string, etc.). Properties can be accessed using jQuery’s prop method (as seen below) and also by interacting with the object in vanilla JS.
 
+```
 $('#linkID').prop('href');
 returns "http://example.com/page2.html"
 
@@ -970,6 +971,7 @@ returns "linkID"
 
 $('#linkID').prop('className');
 returns "link classes"
+```
 
 
 Attributes are in the HTML itself, rather than in the DOM. They are very similar to properties, but not quite as good. When a property is available it’s recommended that you work with properties rather than attributes.
