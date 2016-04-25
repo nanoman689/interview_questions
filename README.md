@@ -942,7 +942,18 @@ In other words; a variable can be used before it has been declared.
 result is 5
 
 
-* Describe event bubbling.
+### Describe event bubbling.
+Event bubbling occurs when a user interacts with a nested element and the event propagates up (“bubbles”) through all of the ancestor elements.
+
+```
+<div class="ancestor">
+	<div class="parent">
+    	<button> Click me! </button>
+    </div>
+</div>
+```
+
+When a user clicks the button the event first fires on the button itself, then bubbles up to the parent div, and then up to the ancestor div. The event would continue to bubble up through all the ancestors, until it finally reaches the document.
 
 ### What's the difference between an "attribute" and a "property"?
 
