@@ -422,9 +422,12 @@ But this means having a menu button instead of a bar in many places that we don'
 
 The browser market will catch up and you won’t have to update anything because the hacks you implemented won’t be needed, and won’t even be actually called. Plus: it’s less frustrating. You can actually design stuff the way you want, make it both look better and with cleaner code. 
 
-  * What techniques/processes do you use?
+### What techniques/processes do you use?
+
+
 
 ### What are the different ways to visually hide content (and make it available only for screen readers)?
+
 **visibility: hidden; and/or display:none;**
 These styles will hide text from all users. The text is removed from the visual flow of the page and is ignored by screen readers. Do not use this CSS if you want the content to be read by a screen reader. But DO use it for content you don't want read by screen readers.
 
@@ -449,9 +452,12 @@ What media queries do is rather than looking for a type of device they look at t
 -resolution
 
 They tend to look something like this:
+
+```
      @media only screen and (max-device-width: 480px) {
 
 	 }
+```
 
 Where, in the above case, any device up to a maxium resolution of 480 would execute the code
 
