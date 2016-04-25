@@ -526,6 +526,7 @@ Obviously your computer monitor can provide a large amount of width to view a pa
 -Some require setting up or upgrading.
   
 **Describe what you like and dislike about the CSS preprocessors you have used**
+
 Bootstrap - Very well documented and rather easy to use, plus there is a lot of examples of how to create complex layouts out there. Also allows you to 'get the ball rolling' in that if a client wants to see something right away, Bootstrap is a good choice for this as it's a bit more visually interesting then raw HTML with no CSS.
 
 Bourbon - Is more for SASS, but it gets the job done. It supports a lot of pre defined mixins as well that 
@@ -626,17 +627,32 @@ The trade-off, and most important thing to remember, about absolute positioning 
 This type of positioning is fairly rare but certainly has its uses. A fixed position element is positioned relative to the viewport, or the browser window itself. The viewport doesn't change when the window is scrolled, so a fixed positioned element will stay right where it is when the page is scrolled, creating an effect a bit like the old school "frames" days. Take a look at this site (update: dead link, sorry), where the left sidebar is fixed. This site is a perfect example for since it exhibits both good and bad traits of fixed positioning. The good is that it keeps the navigation present at all times on the page and it creates and interested effect on the page. The bad is that there are some usability concerns. On my smallish laptop, the content in the sidebar is cut off and there is no way from me to scroll down to see the rest of that content. Also if I scroll all the way down to the footer, it overlaps the footer content not allowing me to see all of that. Cool effect, can be useful, but needs to be thoroughly tested.
 
 ### The 'C' in CSS stands for Cascading.  How is priority determined in assigning styles (a few examples)?  
+
 CSS priority is determined by specificity and inheritance.
 Every CSS rule has a particular weight, meaning it could be more or less important than the others or equally important. This weight defines which properties will be applied to an element when there are conflicting rules.
 
 -Specificity: ID → class, psuedo-class → element, psudo-element
+
 -Inheritence: specified value → computed value → used value → actual value
 
-    **How can you use this system to your advantage?**
-    -When starting work on the CSS, use generic selectors, and add specificity as you go along;
-    -Using advanced selectors doesn’t mean using unnecessarily complicated ones;
-    -Rely more on specificity than on the order of selectors, so that your style sheets are 
-    easier to edit and maintain (especially by others).
+**How can you use this system to your advantage?**
+-When starting work on the CSS, use generic selectors, and add specificity as you go along;
+
+-Using advanced selectors doesn’t mean using unnecessarily complicated ones;
+
+-Rely more on specificity than on the order of selectors, so that your style sheets are easier to edit and maintain (especially by others).
+
+### How do you calculate CSS weights then??
+-If the element has inline styling, that automatically1 wins (1,0,0,0 points)
+
+-For each ID value, apply 0,1,0,0 points
+
+-For each class value (or pseudo-class or attribute selector), apply 0,0,1,0 points
+
+-For each element reference, apply 0,0,0,1 point
+
+You can generally read the values as if they were just a number, like 1,0,0,0 is "1000", and so clearly wins over a specificity of 0,1,0,0 or "100". The commas are there to remind us that this isn't really a "base 10" system, in that you could technically have a specificity value of like 0,1,13,4 - and that "13" doesn't spill over like a base 10 system would.
+
  
 ### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
 Only Bootstrap and Bourbon.io. The only thing I would change would possibly be some of the documentation of Bourbon, as I had a hard time getting that up and running corrrectly and there where some issues trying to create some custom CSS inside of Bourbon as well.
