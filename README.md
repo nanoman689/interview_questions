@@ -313,21 +313,32 @@ Also note that nesting plays a big role. If an element B sits on top of element 
 #### Describe BFC(Block Formatting Context) and how it works.
 A block formatting context is a part of a visual CSS rendering of a Web page. It is the region in which the layout of block boxes occurs and in which floats interact with each other.
 
-A block formatting context is created by one of the following:
+**A block formatting context is created by one of the following**
 
 -The root element or something that contains it
+
 -Floats (elements where float is not none)
+
 -Absolutely positioned elements (elements where position is absolute or fixed)
+
 -Inline-blocks (elements with display: inline-block)
+
 -Table cells (elements with display: table-cell, which is the default for HTML table cells)
+
 -Table captions (elements with display: table-caption, which is the default for HTML table captions)
+
 -Elements where overflow has a value other than visible
+
 -Flex boxes (elements with display: flex or inline-flex)
 
-A block formatting context is a box that satisfies at least one of the following:
+**A block formatting context is a box that satisfies at least one of the following**
+
 -The value of "float" is not "none",
+
 -The used value of "overflow" is not "visible",
+
 -The value of "display" is "table-cell", "table-caption", or "inline-block",
+
 -The value of "position" is neither "static" nor "relative".
 
 
