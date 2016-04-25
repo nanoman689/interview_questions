@@ -699,6 +699,12 @@ GitHub, is a web-page on which you can publish your Git repositories and collabo
 ### Explain event delegation
 Event delegation allows us to attach a single event listener, to a parent element, that will fire for all descendants matching a selector, whether those descendants exist now or are added in the future.
 
+Event delegation is the idea that something other than the target of an action resolves the event raised by that action. An example of event delegation would be having the document element handle the click action of a button. A fairly common occurrence, is to have a “ul” element handle the events raised by its children “li” elements.
+
+Event delegation can be handled in several ways. The standard way is derived from native browser functionality. Browsers are programmed to handle events in a particular work flow. They are designed to support event capturing and event bubbling. The W3C documentation on how browsers are to support events can be found here:W3C DOM Level 3 Events. Some JS libraries and frameworks expose additional options such as the pub/sub model.
+
+Event capturing and event bubbling are two phases in a three phase flow. Any event that occurs, such as clicking a button, starts at the topmost container (which usually is the html root node). The browser moves down the DOM hierarchy until it finds the element raising the event. Once the browser finds the element that caused the event, it enters the targeting phase. Once targeting is complete, the browser bubbles up the DOM back to the topmost container to see if anything else needs to use the same event.
+
 ### Explain how `this` works in JavaScript
 - By default, this refers to the global object.
 - When a function is called as a property on a parent object, this refers to the parent object inside that function.
