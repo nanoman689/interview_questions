@@ -630,11 +630,17 @@ This applies box-sizing to all elemenets. This makes working with the box model 
 
 ### List as many values for the display property that you can remember.
 -none
+
 -inherit
+
 -inline
+
 -inline-block
+
 -block
+
 -table
+
 -table-cell
 
 ### What's the difference between inline and inline-block?
