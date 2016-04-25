@@ -475,7 +475,7 @@ Page breaks in the browser aren't as reliable as they are in Microsoft Word, esp
 Obviously your computer monitor can provide a large amount of width to view a page, but I recommend setting the content area width to 600px (an inch equivalent may be better, but I try to deal with one unit specifically, which is pixels). This ensures that words wont bleed outside the print area. Use this width measurement with the page break DIVs you've created in your stylesheet. After you know the width of your printed content area, adjust the dimensions of content blocks inside the main content area if necessary.  
 
 
-### What are some of the "gotchas" for writing efficient CSS?
+### What are some of the gotchas for writing efficient CSS?
 -Avoid key selectors that match large numbers of elements (tag and universal selectors)
 -Prefer class and ID selectors over tag selectors
 -Avoid redundant selectors
