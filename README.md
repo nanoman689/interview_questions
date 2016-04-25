@@ -373,10 +373,13 @@ A clearfix is a way for an element to automatically clear its child elements, so
 A CSS sprite is a big image containing several background images at once. It’s a collection of images combined in one big image. You choose the background image you want to show by playing with the dimensions of the element (which acts like a viewport) and the background position.
 
 -Bandwidth: you just have 1 HTTP request for one image, and the combined image is often lighter than separate images combined
+
 -Rendering: as soon as the sprite is called and displayed once (and even cached), you can re-use it with other elements. Works well with the :hover pseudo-state. There’s no blinking.
+
 -Maintenance: it’s easier in Photoshop or Sketch to export a single asset with everything
 
 Say you had three flags in a row, your CSS would look like this:
+
 
     .flags-canada, .flags-mexico, .flags-usa {
       background-image: url('../images/flags.png');
