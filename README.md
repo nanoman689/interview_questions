@@ -1013,7 +1013,10 @@ null === undefined is false
 
 '0' === false is false
 
-* Explain the same-origin policy with regards to JavaScript.
+### Explain the same-origin policy with regards to JavaScript.
+The same-origin policy restricts how a document or script loaded from one origin can interact with a resource from another origin. It is a critical security mechanism for isolating potentially malicious documents.
+
+The reason behind that is security. If you have blabla.com in one window and gmail.com in another one, then you’d not want a script from blabla.com to access or modify your mail or run actions in context of gmail on your behalf.
 
 ### Make this work:
 ```javascript
@@ -1028,8 +1031,28 @@ alert([1,2,3,4,5].duplicator());
 
 ```
 
-* Why is it called a Ternary expression, what does the word "Ternary" indicate?
-* What is `"use strict";`? what are the advantages and disadvantages to using it?
+### Why is it called a Ternary expression, what does the word "Ternary" indicate?
+
+-A unary operand accepts one parameter, e.g. -1, where - is the operand, and 1 is the parameter.
+
+-A binary operand accepts two parameters, e.g. 2 + 3, where + is the operand, and 2 and 3 are the parameters.
+
+-So a ternary operand accepts three parameters.
+
+### What is `"use strict";`? what are the advantages and disadvantages to using it?
+If you put "use strict"; at the top of your code (or function), then the JS is evaluated in strict mode. Strict mode throws more errors and disables some features in an effort to make your code more robust, readable, and accurate.
+
+**Advantages**
+-It catches some common coding bloopers, throwing exceptions.
+
+-It prevents, or throws errors, when relatively “unsafe” actions are taken (such as gaining access to the global object).
+
+-It disables features that are confusing or poorly thought out.
+
+**Disadvantages**
+If a developer used a library that was in strict mode, but the developer was used to working in normal mode, they might call some actions on the library that wouldn’t work as expected. Worse, since the developer is in normal mode, they don’t have the advantages of extra errors being thrown, so the error might fail silently.
+
+Also, as listed above, strict mode stops you from doing certain things. People generally think that you shouldn’t use those things in the first place, but some developers don’t like the constraint and want to use all the features of the language.
 
 ### Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
 
