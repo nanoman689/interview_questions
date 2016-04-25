@@ -238,16 +238,21 @@ Today, browsers support the async and defer attributes on scripts. These attribu
 
 *async*
 
+```
 <script type="text/javascript" src="path/to/script1.js" async></script>
 <script type="text/javascript" src="path/to/script2.js" async></script>
+```
 
 Scripts with the async attribute are executed asynchronously. This means the script is executed as soon as it's downloaded, without blocking the browser in the meantime.
 
 This implies that it's possible script 2 is downloaded and executed before script 1.
 
 *defer*
+
+```
 <script type="text/javascript" src="path/to/script1.js" defer></script>
 <script type="text/javascript" src="path/to/script2.js" defer></script>
+```
 
 Scripts with the defer attribute are executed in order (i.e. first script 1, then script 2). This also does not block the browser.
 
