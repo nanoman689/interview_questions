@@ -348,7 +348,9 @@ A clearfix is a way for an element to automatically clear its child elements, so
 - Empty Div Method
 
 ```
-    <div style="clear:both;"></div>
+    <div style="clear:both;">
+    
+    </div>
 ```
 
 - Overflow Method
