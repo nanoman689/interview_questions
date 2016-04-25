@@ -405,6 +405,9 @@ Say you had three flags in a row, your CSS would look like this:
 ### What are your favourite image replacement techniques and which do you use when?
 [Nine Techniques for CSS Image Replacement](https://css-tricks.com/css-image-replacement/)
 
+CSS image replacement is a technique of replacing a text element (usually a header tag) with an image. An example of this would be including a logo on a page. You may want to use a h1 tag and text for this for the accessibility and SEO benefits, but ideally you'd like to show your logo, not text.
+
+
 ### What are your favourite image replacement techniques and which do you use when?
 -Using cross-browser CSS coding. 
 The internet explorer is a hard and using this on IE is very hard. 
