@@ -446,10 +446,14 @@ So for a grid system, you’d have things like .col-3 and .col-9 for a sidebar a
 Yes, but only a few times.
 
 What media queries do is rather than looking for a type of device they look at the capability of the device, and you can use them to check for all kinds of things. For example:
--width and height (of the browser window)
--device width and height
--orientation – for example is a phone in landscape or portrait mode?
--resolution
+
+-Width and height (of the browser window)
+
+-Device width and height
+
+-Orientation – for example is a phone in landscape or portrait mode?
+
+-Resolution
 
 They tend to look something like this:
 
