@@ -346,13 +346,17 @@ A block formatting context is a part of a visual CSS rendering of a Web page. It
 A clearfix is a way for an element to automatically clear its child elements, so that you don't need to add additional markup. It's generally used in float layouts where elements are floated to be stacked horizontally.
 
 - Empty Div Method
+
+```
     <div style="clear:both;"></div>
+```
 
 - Overflow Method
     Setting auto or hidden overflow property on parent will expand it to contain the floats.
 
 - The Psuedo Method: uses the parent's :after to add the clear: both property
-    
+
+```
     .clearfix:after { 
     content: "."; 
     visibility: hidden; 
@@ -360,6 +364,8 @@ A clearfix is a way for an element to automatically clear its child elements, so
     height: 0; 
     clear: both;
     }
+```
+
 
 ### Explain CSS sprites, and how you would implement them on a page or site.
 A CSS sprite is a big image containing several background images at once. It’s a collection of images combined in one big image. You choose the background image you want to show by playing with the dimensions of the element (which acts like a viewport) and the background position.
