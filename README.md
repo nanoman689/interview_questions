@@ -525,13 +525,11 @@ Obviously your computer monitor can provide a large amount of width to view a pa
 -Debugging, due to having a compilation step, the browser is not interpreting the source files, meaning the CSS line numbers are now irrelevant when trying to debug. This makes debugging a lot harder.
 -Some require setting up or upgrading.
   
-	**Describe what you like and dislike about the CSS preprocessors you have used**
-	Bootstrap - Very well documented and rather easy to use, plus there is a lot of examples of how to create complex
-	layouts out there. Also allows you to 'get the ball rolling' in that if a client wants to see something right 
-    away, Bootstrap is a good choice for this as it's a bit more visually interesting then raw HTML with no CSS.
+**Describe what you like and dislike about the CSS preprocessors you have used**
+Bootstrap - Very well documented and rather easy to use, plus there is a lot of examples of how to create complex layouts out there. Also allows you to 'get the ball rolling' in that if a client wants to see something right away, Bootstrap is a good choice for this as it's a bit more visually interesting then raw HTML with no CSS.
 
-	Bourbon - Is more for SASS, but it gets the job done. It supports a lot of pre defined mixins as well that 
-    provide a huge collection to hand CCS features so you don't have to deal with vendor prefixes or CSS hacks.
+Bourbon - Is more for SASS, but it gets the job done. It supports a lot of pre defined mixins as well that 
+provide a huge collection to hand CCS features so you don't have to deal with vendor prefixes or CSS hacks.
 
 ### How would you implement a web design comp that uses non-standard fonts?
 -Use @font-face to render a font (uses src for hard resources)
