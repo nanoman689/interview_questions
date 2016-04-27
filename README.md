@@ -279,15 +279,15 @@ Classes are the general term while ID's are unique. You can use classes over and
 
 
 ### What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
--*Normalize.css preserves useful defaults rather than "unstyling" everything* For example, elements like sup or sub "just work" after including normalize.css (and are actually made more robust) whereas they are visually indistinguishable from normal text after including reset.css. So, normalize.css does not impose a visual starting point (homogeny) upon you. This may not be to everyone's taste. The best thing to do is experiment with both and see which gels with your preferences.
+- *Normalize.css preserves useful defaults rather than "unstyling" everything* For example, elements like sup or sub "just work" after including normalize.css (and are actually made more robust) whereas they are visually indistinguishable from normal text after including reset.css. So, normalize.css does not impose a visual starting point (homogeny) upon you. This may not be to everyone's taste. The best thing to do is experiment with both and see which gels with your preferences.
 
--*Normalize.css corrects some common bugs that are out of scope for reset.css* It has a wider scope than reset.css, and also provides bug fixes for common problems like: display settings for HTML5 elements, the lack of font inheritance by form elements, correcting font-size rendering for pre, SVG overflow in IE9, and the button styling bug in iOS.
+- *Normalize.css corrects some common bugs that are out of scope for reset.css* It has a wider scope than reset.css, and also provides bug fixes for common problems like: display settings for HTML5 elements, the lack of font inheritance by form elements, correcting font-size rendering for pre, SVG overflow in IE9, and the button styling bug in iOS.
 
--*Normalize.css doesn't clutter your dev tools. A common irritation when using reset.css* is the large inheritance chain that is displayed in browser CSS debugging tools. This is not such an issue with normalize.css because of the targeted stylings.
+- *Normalize.css doesn't clutter your dev tools. A common irritation when using reset.css* is the large inheritance chain that is displayed in browser CSS debugging tools. This is not such an issue with normalize.css because of the targeted stylings.
 
--*Normalize.css is more modular* The project is broken down into relatively independent sections, making it easy for you to potentially remove sections (like the form normalizations) if you know they will never be needed by your website.
+- *Normalize.css is more modular* The project is broken down into relatively independent sections, making it easy for you to potentially remove sections (like the form normalizations) if you know they will never be needed by your website.
 
--*Normalize.css has better documentation* The normalize.css code is documented inline as well as more comprehensively in the GitHub Wiki. This means you can find out what each line of code is doing, why it was included, what the differences are between browsers, and more easily run your own tests. The project aims to help educate people on how browsers render elements by default, and make it easier for them to be involved in submitting improvements.
+- *Normalize.css has better documentation* The normalize.css code is documented inline as well as more comprehensively in the GitHub Wiki. This means you can find out what each line of code is doing, why it was included, what the differences are between browsers, and more easily run your own tests. The project aims to help educate people on how browsers render elements by default, and make it easier for them to be involved in submitting improvements.
 
 ### Describe Floats and how they work.
 Float is a CSS positioning property. To understand its purpose and origin, we can look to print design. In a print layout, images may be set into the page such that text wraps around them as needed. This is commonly and appropriately called "text wrap".
@@ -314,32 +314,20 @@ Also note that nesting plays a big role. If an element B sits on top of element 
 A block formatting context is a part of a visual CSS rendering of a Web page. It is the region in which the layout of block boxes occurs and in which floats interact with each other.
 
 **A block formatting context is created by one of the following**
-
--The root element or something that contains it
-
--Floats (elements where float is not none)
-
--Absolutely positioned elements (elements where position is absolute or fixed)
-
--Inline-blocks (elements with display: inline-block)
-
--Table cells (elements with display: table-cell, which is the default for HTML table cells)
-
--Table captions (elements with display: table-caption, which is the default for HTML table captions)
-
--Elements where overflow has a value other than visible
-
--Flex boxes (elements with display: flex or inline-flex)
+- The root element or something that contains it
+- Floats (elements where float is not none)
+- Absolutely positioned elements (elements where position is absolute or fixed)
+- Inline-blocks (elements with display: inline-block)
+- Table cells (elements with display: table-cell, which is the default for HTML table cells)
+- Table captions (elements with display: table-caption, which is the default for HTML table captions)
+- Elements where overflow has a value other than visible
+- Flex boxes (elements with display: flex or inline-flex)
 
 **A block formatting context is a box that satisfies at least one of the following**
-
--The value of "float" is not "none",
-
--The used value of "overflow" is not "visible",
-
--The value of "display" is "table-cell", "table-caption", or "inline-block",
-
--The value of "position" is neither "static" nor "relative".
+- The value of "float" is not "none",
+- The used value of "overflow" is not "visible",
+- The value of "display" is "table-cell", "table-caption", or "inline-block",
+- The value of "position" is neither "static" nor "relative".
 
 
 ### What are the various clearing techniques and which is appropriate for what context?
@@ -372,11 +360,9 @@ A clearfix is a way for an element to automatically clear its child elements, so
 ### Explain CSS sprites, and how you would implement them on a page or site.
 A CSS sprite is a big image containing several background images at once. It’s a collection of images combined in one big image. You choose the background image you want to show by playing with the dimensions of the element (which acts like a viewport) and the background position.
 
--Bandwidth: you just have 1 HTTP request for one image, and the combined image is often lighter than separate images combined
-
--Rendering: as soon as the sprite is called and displayed once (and even cached), you can re-use it with other elements. Works well with the :hover pseudo-state. There’s no blinking.
-
--Maintenance: it’s easier in Photoshop or Sketch to export a single asset with everything
+- Bandwidth: you just have 1 HTTP request for one image, and the combined image is often lighter than separate images combined
+- Rendering: as soon as the sprite is called and displayed once (and even cached), you can re-use it with other elements. Works well with the :hover pseudo-state. There’s no blinking.
+- Maintenance: it’s easier in Photoshop or Sketch to export a single asset with everything
 
 Say you had three flags in a row, your CSS would look like this:
 
@@ -409,17 +395,14 @@ CSS image replacement is a technique of replacing a text element (usually a head
 
 
 ### What are your favourite image replacement techniques and which do you use when?
--Using cross-browser CSS coding. 
+- Using cross-browser CSS coding. 
 The internet explorer is a hard and using this on IE is very hard. 
-
--Making responsive websites.
+- Making responsive websites.
 But this means having a menu button instead of a bar in many places that we don't want, it can be a problematch.
-
--Checking with caniuse.com
+- Checking with caniuse.com
 [caniuse.com](http://caniuse.com/)
 
 ### How do you serve your pages for feature-constrained browsers?
-
 The browser market will catch up and you won’t have to update anything because the hacks you implemented won’t be needed, and won’t even be actually called. Plus: it’s less frustrating. You can actually design stuff the way you want, make it both look better and with cleaner code. 
 
 ### What techniques/processes do you use?
