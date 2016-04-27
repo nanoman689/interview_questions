@@ -786,11 +786,6 @@ if( variable === null ) {
 }
 ```
 
-### How do you organize your code? (module pattern, classical inheritance?)
-
-
-
-
 ### What is closure?
 A closure is a way of keeping access to variables in a function after that function has returned.
 
@@ -933,8 +928,6 @@ Yes, but only jQuery
 **If so, what libraries have you used?**
 -jQuery
 
-
-
 ### Explain "hoisting".
 Hoisting is JavaScript's default behavior of moving declarations to the top.
 
@@ -984,7 +977,6 @@ returns "linkID"
 $('#linkID').prop('className');
 returns "link classes"
 ```
-
 
 Attributes are in the HTML itself, rather than in the DOM. They are very similar to properties, but not quite as good. When a property is available it’s recommended that you work with properties rather than attributes.
 
@@ -1044,22 +1036,17 @@ alert([1,2,3,4,5].duplicator());
 ```
 
 ### Why is it called a Ternary expression, what does the word "Ternary" indicate?
-
--A unary operand accepts one parameter, e.g. -1, where - is the operand, and 1 is the parameter.
-
--A binary operand accepts two parameters, e.g. 2 + 3, where + is the operand, and 2 and 3 are the parameters.
-
--So a ternary operand accepts three parameters.
+- A unary operand accepts one parameter, e.g. -1, where - is the operand, and 1 is the parameter.
+- A binary operand accepts two parameters, e.g. 2 + 3, where + is the operand, and 2 and 3 are the parameters.
+- So a ternary operand accepts three parameters.
 
 ### What is `"use strict";`? what are the advantages and disadvantages to using it?
 If you put "use strict"; at the top of your code (or function), then the JS is evaluated in strict mode. Strict mode throws more errors and disables some features in an effort to make your code more robust, readable, and accurate.
 
 **Advantages**
--It catches some common coding bloopers, throwing exceptions.
-
--It prevents, or throws errors, when relatively “unsafe” actions are taken (such as gaining access to the global object).
-
--It disables features that are confusing or poorly thought out.
+- It catches some common coding bloopers, throwing exceptions.
+- It prevents, or throws errors, when relatively “unsafe” actions are taken (such as gaining access to the global object).
+- It disables features that are confusing or poorly thought out.
 
 **Disadvantages**
 If a developer used a library that was in strict mode, but the developer was used to working in normal mode, they might call some actions on the library that wouldn’t work as expected. Worse, since the developer is in normal mode, they don’t have the advantages of extra errors being thrown, so the error might fail silently.
@@ -1088,21 +1075,19 @@ number(100);
 Form most languages, global variables are considered a “bad thing”. JS is no different, but it probably has more severe consequences than most languages.
 
 Some points on why global variables are generally bad
--It’s harder to read the code and reason about it when variables seem to appear out of thin air (but really from the global scope).
-_Anyone can update a global variable from any point in the program at any time (and from any thread if there’s more than one going).
-_General code smell - if you're too lazy to put the variable only where it needs to be then what other corners are you cutting?
--It’s probable that you'll encounter global variable name clashes. Since there’s only one namespace you're more likely to double up on a variable name.
+- It’s harder to read the code and reason about it when variables seem to appear out of thin air (but really from the global scope).
+- Anyone can update a global variable from any point in the program at any time (and from any thread if there’s more than one going).
+- General code smell - if you're too lazy to put the variable only where it needs to be then what other corners are you cutting?
+- It’s probable that you'll encounter global variable name clashes. Since there’s only one namespace you're more likely to double up on a variable name.
 
 ### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
 
 ### Explain what a single page app is and how to make one SEO-friendly.
 What is is and is not
--It is a Single Page Web App - Built on any number of popular javascript frameworks like Backbone.js, ember.js, or our favorite angular.js
-
--It is not a single page template - Like a theme you might purchase on Theme Forest, or on wrapbootstrap.com
-
--It is not an infinite scrolling site - A page that scrolls forever (infinitely, duh), like what you see on pinterest.com. Infinite scrolling pages use ajax to load more content when the user gets near the bottom of the page.
+- It is a Single Page Web App - Built on any number of popular javascript frameworks like Backbone.js, ember.js, or our favorite angular.js
+- It is not a single page template - Like a theme you might purchase on Theme Forest, or on wrapbootstrap.com
+- It is not an infinite scrolling site - A page that scrolls forever (infinitely, duh), like what you see on pinterest.com. Infinite scrolling pages use ajax to load more content when the user gets near the bottom of the page.
 
 To handle SRO with Angluar, you would want to use when you define your application and configure your routes file, just add a simple $locationProvider.html5Mode(true); and you're good to go. Angular will handle everything for you, and fall back gracefully if the browser doesn't support HTML5.
 
