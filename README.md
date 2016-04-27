@@ -1091,16 +1091,52 @@ What is is and is not
 
 To handle SRO with Angluar, you would want to use when you define your application and configure your routes file, just add a simple $locationProvider.html5Mode(true); and you're good to go. Angular will handle everything for you, and fall back gracefully if the browser doesn't support HTML5.
 
-* What is the extent of your experience with Promises and/or their polyfills?
-* What are the pros and cons of using Promises instead of callbacks?
+### What is the extent of your experience with Promises and/or their polyfills?
+**A promise is***
+The Promise object is used for deferred and asynchronous computations. 
+A Promise represents an operation that hasn't completed yet, but is expected in the future.
+
+The promise constructor takes one argument, a callback with two parameters, resolve and reject. Do something within the callback, perhaps async, then call resolve if everything worked, otherwise call reject.
+
+A promise can:
+- fulfilled The action relating to the promise succeeded 
+- rejected The action relating to the promise failed 
+- pending Hasn't fulfilled or rejected yet 
+- settled Has fulfilled or rejected
+
+```javascript
+    promise.then(function(result) {
+      console.log(result); // "Stuff worked!"
+    }, function(err) {
+      console.log(err); // Error: "It broke"
+});
+```
+
+**A polyfill is**
+A browser fallback, made in javascript, that allows functionality you expect to work in modern browsers to work in older browsers. Ie to support canvas (an html5 feature) in older browsers
+
+A polyfill is a browser fallback, made in javascript, that allows functionality you expect to work in modern browsers to work in older browsers. Ie to support canvas (an html5 feature) in older browsers.
+
+### What are the pros and cons of using Promises instead of callbacks?
+Promises make more than one function to be called easier.
+Particular features are that 
+- Functions can be added anywhere in the code, subject only to the promise being within scope, and
+- Functions added after a Deferred/promise has been resolved/rejected will fire immediately.
+
+
 * What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+
 * What tools and techniques do you use debugging JavaScript code?
+
 * What language constructions do you use for iterating over object properties and array items?
+
 * Explain the difference between mutable and immutable objects.
   * What is an example of an immutable object in JavaScript?
   * What are the pros and cons of immutability?
   * How can you achieve immutability in your own code?
+
 * Explain the difference between synchronous and asynchronous functions.
+
 * What is event loop?
   * What is the difference between call stack and task queue?
 
