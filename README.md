@@ -430,13 +430,10 @@ Yes, but only a few times.
 
 What media queries do is rather than looking for a type of device they look at the capability of the device, and you can use them to check for all kinds of things. For example:
 
--Width and height (of the browser window)
-
--Device width and height
-
--Orientation – for example is a phone in landscape or portrait mode?
-
--Resolution
+- Width and height (of the browser window)
+- Device width and height
+- Orientation, for example is a phone in landscape or portrait mode?
+- Resolution
 
 They tend to look something like this:
 
@@ -450,6 +447,7 @@ Where, in the above case, any device up to a maxium resolution of 480 would exec
 
 ### Are you familiar with styling SVG?
 
+Scalable Vector Graphics (SVG) is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation. The SVG specification is an open standard developed by the World Wide Web Consortium (W3C) since 1999. SVG images and their behaviors are defined in XML text files.
 
 Some Advantages:
 
@@ -475,10 +473,13 @@ Simple Games It's no secret that canvas is suited well for game rendering. Part 
 **Create A Stylesheet For Print**
 Of course you have at least one stylesheet to control the layout of the page and formatting of the content, but do you have a stylesheet to control how your page will look like in print? Add the print style sheet, with the media attribute set to "print", at the end of the list of stylesheets in the header. This will allow you to create custom CSS classes applied only at the time of print. Make sure your structure CSS file is given a media attribute of "all."
 
+```
      <!-- Main stylesheet on top -->
      <link rel="stylesheet" type="text/css" href="/global.css" mce_href="/global.css" href="/global.css" mce_href="/global.css" media="all" />
      <!-- Print only, on bottom -->
      <link rel="stylesheet" type="text/css" href="/print.css" mce_href="/print.css" href="/print.css" mce_href="/print.css" media="print" />
+```
+
 
 **Avoid Unnecessary HTML Tables**
 As much as I try to steer clear of using tables, there's no way to avoid the occasional <tr><td> experience. Forms are much easier to code when using tables. Tables are also great for...get this...data tables. Other than these two situations, a programmer should try to avoid using table, especially when considering print. Controlling the content area of your website can be extremely challenging when the page structure is trapped in a table.
@@ -486,11 +487,13 @@ As much as I try to steer clear of using tables, there's no way to avoid the occ
 **Know Which Portions Of The Page Don't Have Any Print Value**
 You know that awesome banner you have at the top of your site? Ditch it. And those ads on the right and left sides of the page? Goodbye. Web visitors print your page because of the content on it, not to see the supporting images on your website. Create a class called no-print and add that class declaration to DIVS, images, and other elements that have no print value:
 
+```
     .no-print { display:none; }
-    <!-- Example -->
+    	<!-- Example -->
       <div id="navigation" class="no-print">
-	<!-- who needs navigation when you're looking at a printed piece? -->
+		<!-- who needs navigation when you're looking at a printed piece? -->
       </div>
+```
 
 **Use Page Breaks**
 Page breaks in the browser aren't as reliable as they are in Microsoft Word, especially considering the variable content lengths on dynamically created pages, but when utilized well make all the different in printing your website. The CSS specs don't provide a lot of print flexibility but the page-break-before / page-break-after properties prove to be useful. Page breaks are much more reliable when used with DIV elements instead of table cells.
@@ -503,54 +506,39 @@ Obviously your computer monitor can provide a large amount of width to view a pa
 
 
 ### What are some of the gotchas for writing efficient CSS?
--Avoid key selectors that match large numbers of elements (tag and universal selectors)
-
--Prefer class and ID selectors over tag selectors
-
--Avoid redundant selectors
-
--Preferably don't use * (universal selector)
-
--Try group and reuse common properties.
-
--Use efficient CSS selectors
-
--Avoid a universal key selector.
-
--Allow elements to inherit from ancestors, or use a class to apply a style to multiple elements.
-
--Make your rules as specific as possible. 
-
--Prefer class and ID selectors over tag selectors.
-
--Remove redundant qualifiers. 
-
--These qualifiers are redundant:
+- Avoid key selectors that match large numbers of elements (tag and universal selectors)
+- Prefer class and ID selectors over tag selectors
+- Avoid redundant selectors
+- Preferably don't use * (universal selector)
+- Try group and reuse common properties.
+- Use efficient CSS selectors
+- Avoid a universal key selector.
+- Allow elements to inherit from ancestors, or use a class to apply a style to multiple elements.
+- Make your rules as specific as possible. 
+- Prefer class and ID selectors over tag selectors.
+- Remove redundant qualifiers. 
+- These qualifiers are redundant:
     ID selectors qualified by class and/or tag selectors
     Class selectors qualified by tag selectors (when a class is only used for one tag, which is a good design practice anyway).
-
--Avoid using descendant selectors, especially those that specify redundant ancestors.
+- Avoid using descendant selectors, especially those that specify redundant ancestors.
     For example, the rule body ul li a {...} specifies a redundant body selector, since all elements are descendants of the body tag.
-
--Use class selectors instead of descendant selectors.
-
--Avoid CSS expressions
-
--Put CSS in the document head
+- Use class selectors instead of descendant selectors.
+- Avoid CSS expressions
+- Put CSS in the document head
 
 
 ### What are the advantages/disadvantages of using CSS preprocessors?
 **Advantages**
--Better oranization from nesting them
--Ability to define variables and mixins
--Have mathematical functions
--Joining multiple files
--In some cases, cleaner syntaxes
+- Better oranization from nesting them
+- Ability to define variables and mixins
+- Have mathematical functions
+- Joining multiple files
+- In some cases, cleaner syntaxes
 
 **Disadvantages**
--Mainly for designers not comfortable on the command line or programming concepts
--Debugging, due to having a compilation step, the browser is not interpreting the source files, meaning the CSS line numbers are now irrelevant when trying to debug. This makes debugging a lot harder.
--Some require setting up or upgrading.
+- Mainly for designers not comfortable on the command line or programming concepts
+- Debugging, due to having a compilation step, the browser is not interpreting the source files, meaning the CSS line numbers are now irrelevant when trying to debug. This makes debugging a lot harder.
+- Some require setting up or upgrading.
   
 **Describe what you like and dislike about the CSS preprocessors you have used**
 
@@ -560,10 +548,8 @@ Bourbon - Is more for SASS, but it gets the job done. It supports a lot of pre d
 provide a huge collection to hand CCS features so you don't have to deal with vendor prefixes or CSS hacks.
 
 ### How would you implement a web design comp that uses non-standard fonts?
-
--Use @font-face to render a font (uses src for hard resources)
-
--Can just link to a webfont as a stylesheet, use @import, or javascript
+- Use @font-face to render a font (uses src for hard resources)
+- Can just link to a webfont as a stylesheet, use @import, or javascript
 
 ### Explain how a browser determines what elements match a CSS selector.
 They're actually read by the browser engines from right to left. So they find the children first and then check their parents to see if they match the rest of the parts of the rule.
@@ -579,9 +565,8 @@ As the browser parses HTML, it constructs an internal document tree representing
 A CSS pseudo-element is used to style specified parts of an element.
 
 For example, it can be used to:
-
--Style the first letter, or line, of an element
--Insert content before, or after, the content of an element
+- Style the first letter, or line, of an element
+- Insert content before, or after, the content of an element
 
     ::first-letter - Would add a special style to the first letter of a text
     ::before - Would insert something before the element
@@ -612,37 +597,31 @@ Border-box: include up to border, but not margin
 This applies box-sizing to all elemenets. This makes working with the box model quite a bit easier. This is beacuase normally, even if a div has a declared with of 50%, as soon as padding or border is applied, it will be larger then 50%. With the border-box method, padding and borders are "inside" the div rather then "outside". It's worth nothing that universal selector doesn't apply to psudeo elements.
 
 ### List as many values for the display property that you can remember.
--none
-
--inherit
-
--inline
-
--inline-block
-
--block
-
--table
-
--table-cell
+- none
+- inherit
+- inline
+- inline-block
+- block
+- table
+- table-cell
 
 ### What's the difference between inline and inline-block?
 **Inline**
--Respects left and right margins and padding
--Doesn’t respect top and bottom  margins and padding
--Doesn’t have a width and height
--Allow other elements to sit to its left and right
+- Respects left and right margins and padding
+- Doesn’t respect top and bottom  margins and padding
+- Doesn’t have a width and height
+- Allow other elements to sit to its left and right
 
 **Block**
--Respects all margins and paddings
--Respects width and height
--Line break after
+- Respects all margins and paddings
+- Respects width and height
+- Line break after
 
 **Inline-block**
--Placed like an inline element (on the same line) but behaves as block
--Respects all margins and paddings
--Respects width and height
--Allow other elements to sit to its left and right
+- Placed like an inline element (on the same line) but behaves as block
+- Respects all margins and paddings
+- Respects width and height
+- Allow other elements to sit to its left and right
 
 ### What's the difference between a relative, fixed, absolute and statically positioned element?
 **Static** 
@@ -666,28 +645,21 @@ This type of positioning is fairly rare but certainly has its uses. A fixed posi
 CSS priority is determined by specificity and inheritance.
 Every CSS rule has a particular weight, meaning it could be more or less important than the others or equally important. This weight defines which properties will be applied to an element when there are conflicting rules.
 
--Specificity: ID → class, psuedo-class → element, psudo-element
-
--Inheritence: specified value → computed value → used value → actual value
+- Specificity: ID → class, psuedo-class → element, psudo-element
+- Inheritence: specified value → computed value → used value → actual value
 
 **How can you use this system to your advantage?**
--When starting work on the CSS, use generic selectors, and add specificity as you go along;
-
--Using advanced selectors doesn’t mean using unnecessarily complicated ones;
-
--Rely more on specificity than on the order of selectors, so that your style sheets are easier to edit and maintain (especially by others).
+- When starting work on the CSS, use generic selectors, and add specificity as you go along;
+- Using advanced selectors doesn’t mean using unnecessarily complicated ones;
+- Rely more on specificity than on the order of selectors, so that your style sheets are easier to edit and maintain (especially by others).
 
 ### How do you calculate CSS weights then??
--If the element has inline styling, that automatically1 wins (1,0,0,0 points)
-
--For each ID value, apply 0,1,0,0 points
-
--For each class value (or pseudo-class or attribute selector), apply 0,0,1,0 points
-
--For each element reference, apply 0,0,0,1 point
+- If the element has inline styling, that automatically1 wins (1,0,0,0 points)
+- For each ID value, apply 0,1,0,0 points
+- For each class value (or pseudo-class or attribute selector), apply 0,0,1,0 points
+- For each element reference, apply 0,0,0,1 point
 
 You can generally read the values as if they were just a number, like 1,0,0,0 is "1000", and so clearly wins over a specificity of 0,1,0,0 or "100". The commas are there to remind us that this isn't really a "base 10" system, in that you could technically have a specificity value of like 0,1,13,4 - and that "13" doesn't spill over like a base 10 system would.
-
  
 ### What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
 Only Bootstrap and Bourbon.io. The only thing I would change would possibly be some of the documentation of Bourbon, as I had a hard time getting that up and running corrrectly and there where some issues trying to create some custom CSS inside of Bourbon as well.
@@ -719,8 +691,8 @@ All data that is passed to a function is explicitly passed.
 
 A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:
 
--A method is implicitly passed the object on which it was called.
--A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
+- A method is implicitly passed the object on which it was called.
+- A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
 
 Or simply
 A method is on an object.
@@ -786,7 +758,12 @@ It gets created on the global object (that is, the window), thus it operates in 
 
 *undefined* Something is undefined when it hasn’t been defined yet. If you call a variable or function without having actually created it yet the parser will give you an not defined error.
 
-*null* null is a variable that is defined to have a null value.
+*null* The value null represents the intentional absence of any object value. 
+
+    typeof null        ___object (bug in ECMAScript, should be null)
+    typeof undefined   ___undefined
+    null === undefined ___false
+    null  == undefined ___true
 
 ### How would you go about checking for any of these states?
 For Undeclared:
