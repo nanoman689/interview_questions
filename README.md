@@ -1132,9 +1132,27 @@ That said a promise's advantage is flexibility.  You have much more liberty abou
 
 It all depends on what you need to do and how you need it done.  For code that relies on short local reactions to asynchronous events go with a callback.  For more complex interactions and data flows promises bring order to what could potentially be callback hell.
 
-* What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+### What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+- Encourages the use of good JavaScript patterns
+- Discourages JavaScript anti-patterns
+- Makes even good JavaScript code shorter and more readable
 
-* What tools and techniques do you use debugging JavaScript code?
+- Compilation can be a pain. The syntax errors the compiler throws are often vague. 
+- Relatedly, debugging can be a pain. There isn't yet any way to match compiled JS lines to the original Javascript.
+- It's prone to change. Your code may run differently, or not run at all, under a future versions. Of course, this is the case with most languages—moving to a new version of Ruby or Python is similar—but it's not the case with JavaScript, where you can reasonably expect that code that runs fine across major browsers today will run fine across major browsers for as long as the web as we know it exists.
+It's not as well-known.
+
+### What tools and techniques do you use debugging JavaScript code?
+I am only familar with Jasmine, which allows you to use a special Jasmine function called describe which takes two paramaters, with two parameters: a string and a function. The string is a name or title for a spec suite – usually what is being tested. The function is a block of code that implements the suite. From there, you can describe expetations and matches to check your code against. The problem I have found with Jasmine is that in larger projects, you really need to think about how you are going to test your code and do so in smaller test. If you have a very large project, especially one making lots of AJAX calls, it can get very confusion as what you need to be testing as well as trying to get any kind of results.
+
+```
+describe("A suite", function() {
+  it("contains spec with an expectation", function() {
+    expect(true).toBe(true);
+  });
+});
+```
+Other method is using console.log a lot to make sure I am getting back the values that I am expecting to get.
 
 * What language constructions do you use for iterating over object properties and array items?
 
