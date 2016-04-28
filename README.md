@@ -574,24 +574,18 @@ For example, it can be used to:
 
 ### Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
 
-All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout.
+- All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout.
+- The CSS box model is essentially a box that wraps around HTML elements, and it consists of: margins, borders, padding, and the actual content.
+- When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the full size of an element, you must also add the padding, borders and margins.
+- IE8 and earlier versions of IE, included padding and border in the width property.
 
-The CSS box model is essentially a box that wraps around HTML elements, and it consists of: margins, borders, padding, and the actual content.
-
-When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the full size of an element, you must also add the padding, borders and margins.
-
-IE8 and earlier versions of IE, included padding and border in the width property.
 To fix this problem, add a <!DOCTYPE html> to the HTML page.
 
-The box-sizing CSS property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification.
-
-You can change the box model by setting the box-sizing property. Some values are: content-box (default), padding-box, and border-box)
-
-Content-box: width and height includes content but not padding/border/margin
-
-Padding-box: include up to padding
-
-Border-box: include up to border, but not margin
+- The box-sizing CSS property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification.
+- You can change the box model by setting the box-sizing property. Some values are: content-box (default), padding-box, and border-box)
+- Content-box: width and height includes content but not padding/border/margin
+- Padding-box: include up to padding
+- Border-box: include up to border, but not margin
 
 ### What does ```* { box-sizing: border-box; }``` do? What are its advantages?
 This applies box-sizing to all elemenets. This makes working with the box model quite a bit easier. This is beacuase normally, even if a div has a declared with of 50%, as soon as padding or border is applied, it will be larger then 50%. With the border-box method, padding and borders are "inside" the div rather then "outside". It's worth nothing that universal selector doesn't apply to psudeo elements.
@@ -695,8 +689,8 @@ A method is a piece of code that is called by a name that is associated with an 
 - A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
 
 Or simply
-A method is on an object.
-A function is independent of an object.
+- A method is on an object.
+- A function is independent of an object.
 
 ### Explain what the difference between git and github
 Git is a version control system; think of it as a series of snapshots (commits) of your code. You see a path of these snapshots, in which order they where created. You can make branches to experiment and come back to snapshots you took. Git is a piece of software that you install locally on your computer which handles 'version control' for you.
@@ -1056,8 +1050,8 @@ Also, as listed above, strict mode stops you from doing certain things. People g
 ### Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
 
 ```javascript
-for (number=1: number<100; i++;)
-    if ( number %=== 0 );
+    for (number=1: number<100; i++;)
+     if ( number %=== 0 );
       print('buzz');
       } if (number % 15){
           print('fizzBuzz');
@@ -1068,7 +1062,7 @@ for (number=1: number<100; i++;)
           }
         }
       }
-number(100);
+    number(100);
 ```
 
 ### Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
@@ -1082,6 +1076,13 @@ Some points on why global variables are generally bad
 
 ### Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 
+The onload event occurs when an object has been loaded.
+
+onload is most often used within the <body> element to execute a script once a web page has completely loaded all content (including images, script files, CSS files, etc.).
+
+The onload event can be used to check the visitor's browser type and browser version, and load the proper version of the web page based on the information.
+
+The only advantage would be to detect a fully-loaded page where something on that page would require Javascript in order to run correctly.
 
 ### Explain what a single page app is and how to make one SEO-friendly.
 What is is and is not
@@ -1092,7 +1093,7 @@ What is is and is not
 To handle SRO with Angluar, you would want to use when you define your application and configure your routes file, just add a simple $locationProvider.html5Mode(true); and you're good to go. Angular will handle everything for you, and fall back gracefully if the browser doesn't support HTML5.
 
 ### What is the extent of your experience with Promises and/or their polyfills?
-**A promise is***
+**A promise***
 The Promise object is used for deferred and asynchronous computations. 
 A Promise represents an operation that hasn't completed yet, but is expected in the future.
 
@@ -1112,7 +1113,7 @@ A promise can:
 });
 ```
 
-**A polyfill is**
+**A polyfill**
 A browser fallback, made in javascript, that allows functionality you expect to work in modern browsers to work in older browsers. Ie to support canvas (an html5 feature) in older browsers
 
 A polyfill is a browser fallback, made in javascript, that allows functionality you expect to work in modern browsers to work in older browsers. Ie to support canvas (an html5 feature) in older browsers.
