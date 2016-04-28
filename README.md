@@ -1154,7 +1154,9 @@ describe("A suite", function() {
 ```
 Other method is using console.log a lot to make sure I am getting back the values that I am expecting to get.
 
-* What language constructions do you use for iterating over object properties and array items?
+### What language constructions do you use for iterating over object properties and array items?
+An object is an iterator when it knows how to access items from a collection one at a time, while keeping track of its current position within that sequence. In JavaScript an iterator is an object that provides a next() method which returns the next item in the sequence. This method returns an object with two properties: done and value.
+
 
 * Explain the difference between mutable and immutable objects.
   * What is an example of an immutable object in JavaScript?
