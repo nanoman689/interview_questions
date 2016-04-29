@@ -1226,22 +1226,35 @@ A job would have variables assigned to it, and a call stack would be the abstrac
 
 #### Testing Questions:
 
-* What are some advantages/disadvantages to testing your code?
+###What are some advantages/disadvantages to testing your code?
+
+- There's a steep learning curve. Many developers seem to expect that they can be efficient with test-first programming right from day one. Unfortunately it takes a lot of time to gain experience and program at the same speed as before. You can't get around it.
+- You do more coding up front. Test-first means you can't skip tests (which is good) and means you'll end up writing more code up front. This means more time. Again, you can't get around it. You get rewarded with code that's easier to maintain, extend and generally less bugs, but it takes time.
+- Can be a tough sell to managers.Software managers are generally only concerned with timelines. If you switch to test-first programming and you're suddenly taking 2 weeks to complete a feature instead of one, they're not gonna like it.
+- Can be a tough sell to fellow developers. Since there's a steep learning curve not all developers like test-first programming
+
 * What tools would you use to test your code's functionality?
+
 * What is the difference between a unit test and a functional/integration test?
+
 * What is the purpose of a code style linting tool?
 
 #### Performance Questions:
 
 * What tools would you use to find a performance bug in your code?
+
 * What are some ways you may improve your website's scrolling performance?
+
 * Explain the difference between layout, painting and compositing.
 
 #### Network Questions:
 
 * Traditionally, why has it been better to serve site assets from multiple domains?
+
 * Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+
 * What are the differences between Long-Polling, Websockets and Server-Sent Events?
+
 * Explain the following request and response headers:
   * Diff. between Expires, Date, Age and If-Modified-...
   * Do Not Track
@@ -1249,6 +1262,7 @@ A job would have variables assigned to it, and a call stack would be the abstrac
   * Transfer-Encoding
   * ETag
   * X-Frame-Options
+
 * What are HTTP actions? List all HTTP actions that you know, and explain them.
 
 #### Coding Questions:
