@@ -1226,16 +1226,25 @@ A job would have variables assigned to it, and a call stack would be the abstrac
 
 #### Testing Questions:
 
-###What are some advantages/disadvantages to testing your code?
+### What are some advantages/disadvantages to testing your code?
 
 - There's a steep learning curve. Many developers seem to expect that they can be efficient with test-first programming right from day one. Unfortunately it takes a lot of time to gain experience and program at the same speed as before. You can't get around it.
 - You do more coding up front. Test-first means you can't skip tests (which is good) and means you'll end up writing more code up front. This means more time. Again, you can't get around it. You get rewarded with code that's easier to maintain, extend and generally less bugs, but it takes time.
 - Can be a tough sell to managers.Software managers are generally only concerned with timelines. If you switch to test-first programming and you're suddenly taking 2 weeks to complete a feature instead of one, they're not gonna like it.
 - Can be a tough sell to fellow developers. Since there's a steep learning curve not all developers like test-first programming
 
-* What tools would you use to test your code's functionality?
+#### What tools would you use to test your code's functionality?
+- I use Jasmine, Jasmine is a behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests.
 
-* What is the difference between a unit test and a functional/integration test?
+### What is the difference between a unit test and a functional/integration test?
+  **Unit Tests**
+Tests the smallest unit of functionality, typically a method/function (e.g. given a class with a particular state, calling x method on the class should cause y to happen). Unit tests should be focussed on one particular feature (e.g., calling the pop method when the stack is empty should throw an InvalidOperationException). Everything it touches should be done in memory; this means that the test code and the code under test shouldn't:
+  **Integration Tests**
+Integration tests build on unit tests by combining the units of code and testing that the resulting combination functions correctly. This can be either the innards of one system, or combining multiple systems together to do something useful. Also, another thing that differentiates integration tests from unit tests is the environment. Integration tests can and will use threads, access the database or do whatever is required to ensure that all of the code and the different environment changes will work correctly.
+  **Functional Tests**
+Functional tests check a particular feature for correctness by comparing the results for a given input against the specification. Functional tests don't concern themselves with intermediate results or side-effects, just the result (they don't care that after doing x, object y has state z). They are written to test part of the specification such as, "calling function Square(x) with the argument of 2 returns 4".
+
+
 
 * What is the purpose of a code style linting tool?
 
