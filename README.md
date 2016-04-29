@@ -1152,20 +1152,60 @@ describe("A suite", function() {
   });
 });
 ```
+
 Other method is using console.log a lot to make sure I am getting back the values that I am expecting to get.
 
 ### What language constructions do you use for iterating over object properties and array items?
 An object is an iterator when it knows how to access items from a collection one at a time, while keeping track of its current position within that sequence. In JavaScript an iterator is an object that provides a next() method which returns the next item in the sequence. This method returns an object with two properties: done and value.
 
 
-* Explain the difference between mutable and immutable objects.
-  * What is an example of an immutable object in JavaScript?
-  * What are the pros and cons of immutability?
-  * How can you achieve immutability in your own code?
+### Explain the difference between mutable and immutable objects.
 
-* Explain the difference between synchronous and asynchronous functions.
+Immutable means that which cannot be changed or modified. So when you assign a value to a string, this value is created from scratch as opposed to being replaced. So everytime a new value is assigned to the same string, a copy is created. So in reality, you are never changing the original value.
 
-* What is event loop?
+Immutable objects do not modify the object in place (i.e change what it looks like) - they return a new copy of the data with the variables changed.
+
+Mutable objects in Javascript do not return a copy, but let you change the object itself.
+
+When you change a mutable object, it is changed everywhere it is referenced. When you change an immutable object, it is not changed at all - a new object is created, and all the old references to the object will give you the original object with nothing different about it.
+
+**What is an example of an immutable object in JavaScript?**
+
+```javascript
+var statement = "I am an immutable value";
+var otherStr = statement.slice(8, 17);
+```
+
+The second line in no way changes the string in statement. In fact, no string methods change the string they operate on, they all return new strings. The reason is that strings are immutable – they cannot change, we can only ever make new strings.
+
+**What are the pros and cons of immutability?**
+
+**Advantages**
+- Programs with immutable objects are less complicated to think about, since you don't need to worry about how an object may evolve over time.
+- You don't need to make defensive copies of immutable objects when returning or passing to other functions, since there is no possibility an immutable object will be modified behind your back.
+- One copy of an object is just as good as another, so you can cache objects or re-use the same object multiple times.
+- Immutable objects are good for sharing information between threads in a multi-threaded environment since they don't need to be synchronized.
+- Operations on immutable objects return new immutable objects while operations that cause side-effects on mutable objects usually return void. This means several operations can be chained together. For instance
+
+     ("foo" + "bar" + "baz").length()
+
+- In languages where functions are first class values, operations like map, reduce, filter, etc. are basic operations on collections. These can be combined in many ways, and can replace most loops in a program.
+
+**Disadvantages**
+- Cyclic data structures such as graphs are difficult to build. If you have two objects which can't be modified after initialization, how can you get them to point to each other?
+- Allocating lots and lots of small objects rather than modifying ones you already have can have a performance impact. Usually the complexity of either the allocator or the garbage collector depends on the number of objects on the heap.
+- Naive implementations of immutable data structures can result in extremely poor performance. For instance, concatenating many immutable strings (like in Java) is O(n2) when the best algorithm is O(n). It is possible to write efficient immutable data structures, it just takes a little more thought.
+
+**How can you achieve immutability in your own code?**
+- Use Immutable.js
+- State of immutable object can not be modified after construction, any modification should result in new immutable object.
+- All fields of Immutable class should be final.
+- Object must be properly constructed i.e. object reference must not leak during construction process.
+- Object should be final in order to restrict sub-class for altering immutability of parent class.
+
+### Explain the difference between synchronous and asynchronous functions.
+
+### What is event loop?
   * What is the difference between call stack and task queue?
 
 #### Testing Questions:
