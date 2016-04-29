@@ -1180,7 +1180,7 @@ The second line in no way changes the string in statement. In fact, no string me
 
 **What are the pros and cons of immutability?**
 
-**Advantages**
+  **Advantages**
 - Programs with immutable objects are less complicated to think about, since you don't need to worry about how an object may evolve over time.
 - You don't need to make defensive copies of immutable objects when returning or passing to other functions, since there is no possibility an immutable object will be modified behind your back.
 - One copy of an object is just as good as another, so you can cache objects or re-use the same object multiple times.
@@ -1191,7 +1191,7 @@ The second line in no way changes the string in statement. In fact, no string me
 
 - In languages where functions are first class values, operations like map, reduce, filter, etc. are basic operations on collections. These can be combined in many ways, and can replace most loops in a program.
 
-**Disadvantages**
+  **Disadvantages**
 - Cyclic data structures such as graphs are difficult to build. If you have two objects which can't be modified after initialization, how can you get them to point to each other?
 - Allocating lots and lots of small objects rather than modifying ones you already have can have a performance impact. Usually the complexity of either the allocator or the garbage collector depends on the number of objects on the heap.
 - Naive implementations of immutable data structures can result in extremely poor performance. For instance, concatenating many immutable strings (like in Java) is O(n2) when the best algorithm is O(n). It is possible to write efficient immutable data structures, it just takes a little more thought.
@@ -1206,16 +1206,23 @@ The second line in no way changes the string in statement. In fact, no string me
 ### Explain the difference between synchronous and asynchronous functions.
 When you execute something synchronously, you wait for it to finish before moving on to another task. When you execute something asynchronously, you can move on to another task before it finishes.
 
-**Synchronized** means "connected", or "dependent" in some way. In other words two synchronous tasks must be aware of one another, and one must execute in some way that is dependent on the other. In most cases that means that one cannot start until the other has completed. Asynchronous means they are totally independent and neither one must consider the other in any way, either in initiation or in execution.
+  **Synchronized** means "connected", or "dependent" in some way. In other words two synchronous tasks must be aware of one another, and one must execute in some way that is dependent on the other. In most cases that means that one cannot start until the other has completed. Asynchronous means they are totally independent and neither one must consider the other in any way, either in initiation or in execution.
 
 You are in a queue to get a movie ticket. You cannot get one until everybody in front of you gets one, and the same applies to the people queued behind you.
 
-**Asynchronous** is like You are in a restaurant with many other people. You order your food. Other people can also order their food, they don't have to wait for your food to be cooked and served to you before they can order. In the kitchen restaurant workers are continuously cooking, serving, and taking orders. People will get their food served as soon as it is cooked.
-
-
+  **Asynchronous** is like You are in a restaurant with many other people. You order your food. Other people can also order their food, they don't have to wait for your food to be cooked and served to you before they can order. In the kitchen restaurant workers are continuously cooking, serving, and taking orders. People will get their food served as soon as it is cooked.
 
 ### What is event loop?
-  * What is the difference between call stack and task queue?
+The main event loop is the central routine in the browser responsible for queueing up these events as they occur and calling the handler functions. Browsers generally execute all event handlers on a single thread, so if one handler takes a long time to run it will make the page appear unresponsive as other user initiated events can't be handled in a timely fashion.
+
+ **What is the difference between call stack and task queue?**
+A job queue (sometimes batch queue), is a data structure maintained by job scheduler software containing jobs to run.
+
+A call stack is a stack data structure that stores information about the active subroutines of a computer program. This kind of stack is also known as an execution stack, control stack, run-time stack, or machine stack, and is often shortened to just "the stack".
+
+So in short, a job queue is a queue of things to do (usually stored persistant) and a call stack is a stack of routines.
+
+A job would have variables assigned to it, and a call stack would be the abstract implementation.
 
 #### Testing Questions:
 
