@@ -1204,6 +1204,15 @@ The second line in no way changes the string in statement. In fact, no string me
 - Object should be final in order to restrict sub-class for altering immutability of parent class.
 
 ### Explain the difference between synchronous and asynchronous functions.
+When you execute something synchronously, you wait for it to finish before moving on to another task. When you execute something asynchronously, you can move on to another task before it finishes.
+
+**Synchronized** means "connected", or "dependent" in some way. In other words two synchronous tasks must be aware of one another, and one must execute in some way that is dependent on the other. In most cases that means that one cannot start until the other has completed. Asynchronous means they are totally independent and neither one must consider the other in any way, either in initiation or in execution.
+
+You are in a queue to get a movie ticket. You cannot get one until everybody in front of you gets one, and the same applies to the people queued behind you.
+
+**Asynchronous** is like You are in a restaurant with many other people. You order your food. Other people can also order their food, they don't have to wait for your food to be cooked and served to you before they can order. In the kitchen restaurant workers are continuously cooking, serving, and taking orders. People will get their food served as soon as it is cooked.
+
+
 
 ### What is event loop?
   * What is the difference between call stack and task queue?
