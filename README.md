@@ -1244,15 +1244,24 @@ Integration tests build on unit tests by combining the units of code and testing
   **Functional Tests**
 Functional tests check a particular feature for correctness by comparing the results for a given input against the specification. Functional tests don't concern themselves with intermediate results or side-effects, just the result (they don't care that after doing x, object y has state z). They are written to test part of the specification such as, "calling function Square(x) with the argument of 2 returns 4".
 
+### What is the purpose of a code style linting tool?
+Computer programs are written once and read/edited a million times. Clean and well organized code makes this easy and in some case possible.
+
+It is a nightmare for anyone to dive in a mess of ugly, unorganized abysmal code and then make a bug fix or add another feature.
+Good code needs minimal documentation. It is self explanatory.
+
+Some programmer write downright ugly code- non uniform, poorly indented illegible code. Even the programmer who are diligent enough to write 'good'/ readable code, have certain preferences in their writing style.
 
 
-* What is the purpose of a code style linting tool?
 
 #### Performance Questions:
 
-* What tools would you use to find a performance bug in your code?
+### What tools would you use to find a performance bug in your code?
+There are a lot of tools for doing this, many frameworks have built in debugging tools.
 
-* What are some ways you may improve your website's scrolling performance?
+- Google Developer tools are the ones I use. The network tab allows you to check network calls and performace. You can see how long each part of your code is taking to load. You can also check calls to other APIs and other outside sources to make sure that those are running well. 
+
+### What are some ways you may improve your website's scrolling performance?
 
 * Explain the difference between layout, painting and compositing.
 
