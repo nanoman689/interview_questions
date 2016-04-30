@@ -1279,7 +1279,24 @@ Most of large websites store their static content such as Images, JavaScrips & C
 
 As the CDN has a different domain name, it also provides domain sharding benefits. Web browsers are restricted to download several items at once, so the more you use resources hosted on external domains the faster a page loads. This applies to everything from images to javascripts. Hence, Requests for static resources should be parallelized and balanced across the hostnames.
 
-* Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+### Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+
+Let's say the site is google.com
+
+Step 1 Get the ip address of the URL.
+
+To Get the IP address for google.com, the steps are
+a) System checks the browser cache. Browser caches the DNS data for some time.
+b) If IP address[DNS data for google.com is not found in browser cahe, system will check the OS cache. [in windows gethostbyname system call is made]
+c) If IP address[DNS data for google.com is not found in  OS cache, then  request continues to DNS cache maintained by the router.
+d) If DNS data for google.com is not found then seach moves to next level where DNS cache of your Internet Service Provider.
+e) If the  DNS data is not found in ISP's DNS cache, then ISP's DNS server perform DNS query to search for the required DNS data.
+
+Step 2 Once browser gets the IP address it opens TCP connection and sends HTTP request to  the web server.
+
+Step 3 The web server will handle the request [it happens in multiple steps] and send the HTTP response to the client/browser.
+
+Step 4 The browser parse the HTML docuemnt and render it.
 
 * What are the differences between Long-Polling, Websockets and Server-Sent Events?
 
