@@ -1262,12 +1262,22 @@ There are a lot of tools for doing this, many frameworks have built in debugging
 - Google Developer tools are the ones I use. The network tab allows you to check network calls and performace. You can see how long each part of your code is taking to load. You can also check calls to other APIs and other outside sources to make sure that those are running well. 
 
 ### What are some ways you may improve your website's scrolling performance?
+- With Google Developer Tools using the timeline panel and setting it to frame mode, click the record button and then start to scroll, you'll see a bunch of green bars. From here you can inspect various elements of what was happenening while you scroll the page. If you use the event log tab, you can even see the time it takes for the page to do various activities such as making javascript calls, painting, and render times.
 
-* Explain the difference between layout, painting and compositing.
+### Explain the difference between layout, painting and compositing.
+- Layout: Once the browser knows which rules apply to an element it can begin to calculate how much space it takes up and where it is on screen. The web’s layout model means that one element can affect others, e.g. the width of the <body> element typically affects its children’s widths and so on all the way up and down the tree, so the process can be quite involved for the browser.
+- Painting: Painting is the process of filling in pixels. It involves drawing out text, colors, images, borders, and shadows, essentially every visual part of the elements. The drawing is typically done onto multiple surfaces, often called layers.
+- Compositing: Since the parts of the page were drawn into potentially multiple layers they need to be drawn to the screen in the correct order so that the page renders correctly. This is especially important for elements that overlap another, since a mistake could result in one element appearing over the top of another incorrectly.
+
 
 #### Network Questions:
 
-* Traditionally, why has it been better to serve site assets from multiple domains?
+### Traditionally, why has it been better to serve site assets from multiple domains?
+In order to get the browser to download more assets in parallel, you can serve them from different domains. If a browser can only fetch, say, two assets at once from a domain, then serving content from two domains means it can fetch four assets at once; serving from three domains means six parallel downloads.
+
+Most of large websites store their static content such as Images, JavaScrips & CSS files to a Content Delivery Network or CDN as deploying your content across multiple, geographically dispersed servers will make your pages load faster from the user's perspective. Additionally, it increases site performance by reducing the roundtrip time for resource requests. 
+
+As the CDN has a different domain name, it also provides domain sharding benefits. Web browsers are restricted to download several items at once, so the more you use resources hosted on external domains the faster a page loads. This applies to everything from images to javascripts. Hence, Requests for static resources should be parallelized and balanced across the hostnames.
 
 * Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
 
