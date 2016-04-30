@@ -1298,17 +1298,43 @@ Step 3 The web server will handle the request [it happens in multiple steps] and
 
 Step 4 The browser parse the HTML docuemnt and render it.
 
+[Here is a very good description of it.](http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/)
+
 * What are the differences between Long-Polling, Websockets and Server-Sent Events?
+**Long poll** - _request → wait → response_ Creates connection to server like AJAX does, but keep-alive connection open for some time (not long though), during connection open client can receive data from server. Client have to reconnect periodically after connection is closed due to timeouts or data eof. On server side it is still treated like HTTP request same as AJAX, except the answer on request will happen now or some time in the future defined by application logic. Supported in all major browsers.
 
-* Explain the following request and response headers:
-  * Diff. between Expires, Date, Age and If-Modified-...
-  * Do Not Track
-  * Cache-Control
-  * Transfer-Encoding
-  * ETag
-  * X-Frame-Options
+**WebSockets** - _client ↔ server_ Create TCP connection to server, and keep it as long as needed. Server or client can easily close it. Client goes through HTTP compatible handshake process, if it succeeds, then server and client can exchange data both directions at any time. It is very efficient if application requires frequent data exchange in both ways. WebSockets do have data framing that includes masking for each message sent from client to server so data is simply encrypted. support chart (very good)
 
-* What are HTTP actions? List all HTTP actions that you know, and explain them.
+**Server-Sent Events** - _client ← server_ Client establishes persistent and long-term connection to server. Only server can send data to client. If client wants to send data to server it would require to use other technology/protocol to do so. This protocol is HTTP compatible and simple to implement in most server-side platforms. This is preferable protocol to be used instead of Long Polling. support chart (good, except IE)
+
+### Explain the following request and response headers:
+  **Diff. between Expires, Date, Age and If-Modified**
+   - Expires: Gives the date/time after which the response is considered stale
+   - Date: Gives the date and time that the message was sent
+   - Age: The age the object has been in a proxy cache in seconds
+   - If-Modified: Returns _Not Modified_ to be returned if content is unchanged
+  
+  **Do Not Track**
+   - DNT: Requests a web application to disable their tracking of a user. 
+  
+  **Cache-Control**
+   - Used to specify directives that must be obeyed by all caching mechanisms along the request-response chain
+  
+  **Transfer-Encoding**
+   - The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity.
+  
+  **ETag**
+   - An identifier for a specific version of a resource, often a message digest
+  
+  **X-Frame-Options**
+   - Clickjacking protection: deny - no rendering within a frame, sameorigin - no rendering if origin mismatch, allow-from - allow from specified location, allowall - non-standard, allow from any location
+
+### What are HTTP actions? List all HTTP actions that you know, and explain them.
+- GET    : get data
+- POST   : create or update **entire or part** resource at non-specific entity URI
+- PUT    : create or update **entire** resource at specific entity URI
+- DELETE : delete entity at specific entity URI
+
 
 #### Coding Questions:
 
